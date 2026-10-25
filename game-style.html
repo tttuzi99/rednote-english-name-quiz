@@ -44,7 +44,7 @@ const map=[[0,5,2,3],[0,5,6,3],[0,5,2,4],[3,5,6,7],[0,5,2,4],[0,5,2,3],[0,5,6,7]
 let index=0,answers=[];
 const app=document.getElementById("app");
 function home(){index=0;answers=[];app.innerHTML='<div class="eyebrow">LITTLE TEST STUDIO · PLAYER ARCHETYPE</div><h1>你是哪种游戏风格原型？</h1><p>收藏家、杀手、吟游诗人……你玩游戏时真正追求的是什么？15 道题，找到你的玩家动机原型。</p><p class="muted">凭第一直觉选择，没有标准答案。</p><button class="primary" onclick="start()">开始测试 →</button>';}
-function start(){index=0;answers=[];renderQuestion();window.scrollTo({top:0,behavior:"smooth"});}
+function start(){index=0;answers=[];app.replaceChildren();renderQuestion();window.scrollTo({top:0,behavior:"smooth"});}
 function renderQuestion(){const q=qs[index];const percent=Math.round(index/qs.length*100);app.innerHTML='<div class="topline"><span class="muted">玩家风格探索</span><span class="muted">第 '+(index+1)+' / '+qs.length+' 题</span></div><div class="progress"><div class="bar" style="width:'+percent+'%"></div></div><h2>'+q[0]+'</h2><div>'+q[1].map((x,j)=>'<button class="option'+(answers[index]===j?' selected':'')+'" onclick="pick('+j+')"><span class="letter">'+String.fromCharCode(65+j)+'</span><span>'+x+'</span></button>').join('')+'</div><div class="nav">'+(index?'<button class="secondary" onclick="back()">← 上一题</button>':'<button class="secondary" onclick="home()">返回介绍</button>')+'</div>';}
 function back(){if(index>0){index--;renderQuestion();}}
 function pick(n){answers[index]=n;if(document.activeElement&&document.activeElement.blur)document.activeElement.blur();if(index<qs.length-1){index++;renderQuestion();}else finish();}
