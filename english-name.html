@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#f4f0eb">
+<title>测测你的本命英文名｜你的风格最适配哪些英文名？</title>
+<style>
+:root{--bg:#f3f4f6;--paper:#ffffff;--ink:#20252b;--muted:#59636f;--sage:#a8b4a1;--sage-dark:#788875;--rose:#d8b9b2;--blue:#b7c6cc;--sand:#e7d9c8;--line:#d5dbe2;--shadow:0 12px 35px rgba(77,67,56,.07)}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;line-height:1.65}button{font:inherit;cursor:pointer}button:focus-visible{outline:3px solid #7b9282;outline-offset:3px}
+.app{max-width:760px;margin:0 auto;min-height:100vh;padding:18px 16px 42px}.topline{display:flex;align-items:center;justify-content:space-between;font-size:12px;color:var(--muted);letter-spacing:.08em;padding:4px 2px 18px}.brand{display:flex;gap:7px;align-items:center}.dot{width:8px;height:8px;border-radius:50%;background:var(--sage-dark)}.screen{display:none}.screen.active{display:block;animation:fade .22s ease}@keyframes fade{from{opacity:.5;transform:translateY(4px)}to{opacity:1;transform:none}}
+.hero{position:relative;overflow:hidden;background:var(--paper);border:1px solid #eee7df;border-radius:28px;padding:34px 25px 30px;box-shadow:var(--shadow)}.hero:before,.hero:after{content:"";position:absolute;border-radius:50%;pointer-events:none}.hero:before{width:180px;height:180px;background:#e6e9df;right:-65px;top:-70px;opacity:.85}.hero:after{width:115px;height:115px;background:#ead9d2;right:45px;top:60px;opacity:.6}.hero-content{position:relative;z-index:1}.eyebrow{font-size:11px;letter-spacing:.2em;color:var(--sage-dark);font-weight:700}.hero h1{font-size:clamp(28px,7vw,43px);line-height:1.28;letter-spacing:-.04em;margin:16px 0 12px;font-weight:750}.hero h1 span{display:block;font-size:.52em;letter-spacing:.04em;color:#777a70;font-weight:500;margin-top:8px}.intro{font-size:14px;color:#77766f;max-width:470px;margin:0 0 22px}.pillrow{display:flex;gap:8px;flex-wrap:wrap;margin:22px 0}.pill{font-size:12px;color:#6c7769;background:#edf0e9;border-radius:99px;padding:6px 11px}.primary,.secondary{border:0;border-radius:14px;padding:13px 19px;font-weight:650;transition:transform .15s,background .15s}.primary{background:var(--sage-dark);color:white;box-shadow:0 6px 14px #78887530}.primary:hover{background:#687b66;transform:translateY(-1px)}.secondary{background:#f0ece6;color:#65655f}.full{width:100%}.note{font-size:12px;color:var(--muted);margin-top:14px}.decor{display:flex;align-items:center;gap:10px;color:#9b9c91;font-size:12px;margin-top:25px}.decor:before,.decor:after{content:"";height:1px;background:var(--line);flex:1}
+.quiz-card,.result-head{background:var(--paper);border:1px solid #eee7df;border-radius:24px;padding:23px 20px;box-shadow:var(--shadow)}.quiz-meta{display:flex;justify-content:space-between;align-items:center;font-size:12px;color:var(--muted);margin-bottom:14px}.progress{height:5px;background:#ece7e0;border-radius:99px;overflow:hidden;margin-bottom:27px}.progress span{display:block;height:100%;width:0;background:var(--sage-dark);border-radius:99px;transition:width .2s}.q-kicker{font-size:11px;letter-spacing:.16em;color:#79513f;font-weight:700}.question{font-size:23px;line-height:1.45;margin:9px 0 8px;letter-spacing:-.025em}.q-help{font-size:13px;color:var(--muted);margin-bottom:22px}.options{display:grid;gap:10px}.option{display:flex;gap:12px;align-items:center;text-align:left;width:100%;padding:13px 14px;border:1px solid var(--line);border-radius:15px;background:#fffdfa;color:var(--ink);transition:border .15s,background .15s}.option:hover{border-color:#b3c0ac;background:#f8f8f2}.option.selected{border-color:var(--sage-dark);background:#eef1e9;box-shadow:inset 0 0 0 1px var(--sage-dark)}.letter{flex:0 0 29px;height:29px;border-radius:10px;display:grid;place-items:center;background:#f0ece6;color:#858176;font-size:12px;font-weight:700}.selected .letter{background:var(--sage-dark);color:white}.option-text{font-size:14px;line-height:1.45}.quiz-actions{display:flex;gap:10px;margin-top:23px}.quiz-actions button{flex:1}.quiz-actions .secondary{flex:.7}.error{font-size:12px;color:#a45d53;margin-top:10px;min-height:18px}
+.result-head{text-align:center;padding:27px 20px;background:linear-gradient(145deg,#fbfaf6,#edf0e9)}.result-icon{width:60px;height:60px;margin:0 auto 12px;display:grid;place-items:center;border-radius:50%;background:#dfe6d9;font-size:26px}.result-label{font-size:11px;letter-spacing:.18em;color:var(--sage-dark);font-weight:700}.result-head h2{font-size:29px;margin:7px 0 2px;line-height:1.3}.result-head .en-title{font-size:14px;color:#535d68;letter-spacing:.05em}.result-desc{max-width:510px;margin:14px auto 0;color:#414a54;font-size:14px}.section-title{font-size:18px;margin:25px 2px 5px}.section-sub{font-size:12px;color:var(--muted);margin:0 2px 13px}.name-list{display:grid;gap:12px}.name-card{background:var(--paper);border:1px solid #eee7df;border-radius:19px;padding:17px 17px 16px;box-shadow:0 5px 16px #4d43380a}.name-top{display:flex;align-items:flex-start;gap:12px}.name-num{width:32px;height:32px;flex:0 0 32px;border-radius:11px;background:#e9ede4;display:grid;place-items:center;color:#6d7c68;font-size:12px;font-weight:700}.name-main{flex:1}.name-main h3{margin:0;font-size:21px;line-height:1.3}.pronounce{font-size:12px;color:#59636f;margin-left:6px;font-weight:400} .name-vibe{display:none}.save-btn{border:1px solid #e5ded5;background:#faf7f2;color:#77756d;border-radius:10px;padding:6px 9px;font-size:11px;white-space:nowrap}.save-btn.saved{background:#e8eee4;border-color:#c9d4c2;color:#65755e}.name-copy{font-size:13px;color:#343d46;margin:13px 0 10px}.show-note{border-left:2px solid #d8c4b8;padding:1px 0 1px 10px;font-size:12px;color:#4b5560}.show-note strong{color:#343d46;font-weight:650}.fit-note{font-size:12px;color:#59636f;margin-top:8px}.result-bottom{margin-top:22px;padding:19px;background:#eeece5;border-radius:18px}.result-bottom h3{font-size:15px;margin:0 0 7px}.result-bottom p{font-size:13px;color:#414a54;margin:0}.bottom-actions{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:17px}.bottom-actions button{width:100%}.smallprint{font-size:11px;color:#59636f;text-align:center;margin-top:20px}.toast{position:fixed;left:50%;bottom:22px;transform:translate(-50%,15px);background:#464b43;color:white;border-radius:99px;padding:10px 16px;font-size:12px;opacity:0;pointer-events:none;transition:.2s;z-index:9}.toast.show{opacity:1;transform:translate(-50%,0)}
+@media(min-width:600px){.app{padding-top:28px}.hero{padding:45px 42px 38px}.quiz-card{padding:30px}.name-list{grid-template-columns:1fr 1fr}.name-card{height:100%}.result-head{padding:35px 35px}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+
+
+</style>
+</head>
+<body>
+<div class="app">
+  <div class="topline"><div class="brand"><span class="dot"></span><span>SOFT NAME STUDIO</span></div><span>NAME PERSONALITY QUIZ</span></div>
+  <section id="cover" class="screen active">
+    <div class="hero"><div class="hero-content">
+      <div class="eyebrow">A LITTLE TEST ABOUT YOU</div>
+      <h1>测测你的本命英文名<span>你的风格最适配哪些英文名？</span></h1>
+      <p class="intro">英文名不只是一个称呼，也可以是你想呈现的气质。用 15 道小题，找到更贴近你性格、生活方式和审美的名字灵感。</p>
+      <div class="pillrow"><span class="pill">15 道单选题</span><span class="pill">约 3 分钟</span></div>
+      <button class="primary full" id="startBtn">开始测试 <span aria-hidden="true">→</span></button>
+      <div class="note">没有标准答案，选最像自己的那一个就好。</div>
+      <div class="decor">A name that feels like you</div>
+    </div></div>
+  </section>
+
+  <section id="quiz" class="screen">
+    <div class="quiz-card">
+      <div class="quiz-meta"><span id="stepText">QUESTION 01 / 15</span><span id="percentText">已完成 0%</span></div>
+      <div class="progress"><span id="progressBar"></span></div>
+      <div class="q-kicker" id="qKicker">YOUR EVERYDAY STYLE</div>
+      <h2 class="question" id="questionText"></h2>
+      <div class="q-help" id="questionHelp">选一个最符合你真实状态的答案。</div>
+      <div class="options" id="options"></div>
+      <div class="error" id="errorText" aria-live="polite"></div>
+      <div class="quiz-actions"><button class="secondary" id="prevBtn">上一题</button><button class="primary" id="nextBtn">下一题 →</button></div>
+    </div>
+    <p class="smallprint">你的选择只用于生成本次结果，不需要填写任何个人信息。</p>
+  </section>
+
+  <section id="result" class="screen">
+    <div class="result-head">
+      <div class="result-icon" id="resultIcon">✿</div>
+      <div class="result-label">YOUR NAME VIBE</div>
+      <h2 id="resultTitle"></h2><div class="en-title" id="resultEn"></div>
+      <p class="result-desc" id="resultDesc"></p>
+         </div>
+    <h3 class="section-title">这 5 个名字，值得你试试看</h3>
+    <p class="section-sub">每个名字都有自己的小气质，看看哪一个让你觉得“就是它”。</p>
+    <div class="name-list" id="nameList"></div>
+    <div class="result-bottom"><h3>一个小提醒</h3><p>名字带来的气质联想很主观，影视角色也只是文化参考。选英文名时，优先考虑自己喜欢、读起来顺口、在真实生活中方便使用的名字。</p></div>
+    <div class="bottom-actions"><button class="secondary" id="restartBtn">↻ 重新测试</button><button class="primary" id="shareBtn">复制我的结果</button></div>
+    <div class="smallprint">Made with a little curiosity · 本测试仅供娱乐与自我探索</div>
+  </section>
+</div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<script>
+const categories = {
+ ice:{title:"冷感掌控型",en:"THE ICE QUEEN",icon:"❄",desc:"你有自己的判断和边界，不急着让所有人喜欢你。比起热闹，你更在意关系的质量、做事的分寸，以及把生活安排在自己舒服的节奏里。",names:[
+ ["Blair","布莱尔","强势精致","你很清楚自己喜欢什么，也不怕表达立场。Blair 有一种聪明、讲究、带点锋芒的感觉，适合不想把自己放进甜美模板的人。","《绯闻女孩》Gossip Girl 中的 Blair Waldorf","适合：有主见、目标感强、重视个人风格的人。"],
+ ["Victoria","维多利亚","经典女王感","这个名字正式又有力量，像一个不靠大声说话也能让人注意到的人。它成熟、好认，在校园和职场语境里都能自然使用。","《维多利亚》Victoria 等以 Victoria 为名的影视角色","适合：稳重、自信、希望名字有分量的人。"],
+ ["Vivian","薇薇安","优雅理性","Vivian 既有女性化的优雅，也不会显得过分柔弱。它适合外表温和、内心有原则，习惯先观察再行动的人。","《风月俏佳人》Pretty Woman 中的 Vivian Ward","适合：独立、细腻、做事有自己标准的人。"],
+ ["Vanessa","瓦妮莎","独立神秘","Vanessa 听起来成熟而有一点距离感，不会太甜，也不显得刻意冷酷。它适合有自己的兴趣圈、并不急于向所有人解释自己的人。","《绯闻女孩》Gossip Girl 中的 Vanessa Abrams","适合：独立、观察力强、不盲从的人。"],
+ ["Scarlett","斯嘉丽","鲜明有锋芒","Scarlett 有很强的画面感，热烈、自信，也带一点不服输的劲儿。适合喜欢鲜明风格、希望名字有记忆点的人。","《乱世佳人》Gone with the Wind 中的 Scarlett O’Hara","适合：行动力强、情绪浓烈、敢于做选择的人。"]
+ ]},
+ mean:{title:"美式校园主角型",en:"THE CAMPUS IT GIRL",icon:"★",desc:"你对氛围和人际互动很敏锐，既享受热闹，也希望自己有存在感。你可能喜欢漂亮、有记忆点的东西，也不介意偶尔表现得自信一点。",names:[
+ ["Madison","麦迪逊","校园焦点","Madison 有一种典型的美式青春剧氛围：大方、时髦、在人群里不容易被忽略。它既现代又足够常见，适合喜欢明快社交感的人。","《美少女的谎言》Pretty Little Liars 等作品中出现的 Madison 角色名","适合：外向、喜欢新鲜感、擅长读懂场合的人。"],
+ ["Hailey","海莉","现代时髦","Hailey 带着轻快的现代感，像一个会关注潮流、但也知道自己适合什么的人。名字亲切、不难读，整体很有当代美式女孩的感觉。","《摩登家庭》Modern Family 中的 Haley Dunphy（同音近似拼写）","适合：活泼、自信、愿意尝试新风格的人。"],
+ ["Chloe","克洛伊","俏皮有主见","Chloe 明亮、利落，既可爱又不软弱。它适合反应快、说话直接，偶尔有点挑剔，但并不想把自己包装得过于成熟的人。","《超人前传》Smallville 中的 Chloe Sullivan","适合：机灵、表达直接、审美鲜明的人。"],
+ ["Addison","艾迪生","精致社交派","Addison 有一点时髦、轻盈的现代气质，适合喜欢和朋友分享生活、对流行趋势保持好奇的人。它也有比较鲜明的美式名字感。","《实习医生格蕾》Grey’s Anatomy 中的 Addison Montgomery","适合：社交主动、反应灵活、注重个人形象的人。"],
+ ["Brooklyn","布鲁克林","大胆有活力","Brooklyn 比较有个性，也带一点城市感和街头感。它适合喜欢热闹、行动力强、不希望名字太传统的人。","《布鲁克林九九》Brooklyn Nine-Nine 是大众熟悉的纽约喜剧剧名；Brooklyn 作为人名则带有现代、城市感","适合：开朗、独立、喜欢把生活过得丰富的人。"]
+ ]},
+ sweet:{title:"甜美亲和型",en:"THE SWEETHEART",icon:"♡",desc:"你重视相处时的舒服感，也愿意照顾别人的情绪。你不一定总是外向，但真诚、稳定的连接对你很重要。你的风格可以温柔，却不需要没有主见。",names:[
+ ["Lily","莉莉","清新甜妹","Lily 简洁、轻盈，带着自然的清新感，不需要太多修饰就很好记。它适合温柔、真诚，也喜欢简单美好事物的人。","《How I Met Your Mother》中的 Lily Aldrin；《绯闻女孩》中的 Lily van der Woodsen","适合：细腻、温暖、喜欢轻盈风格的人。"],
+ ["Emma","艾玛","自然邻家感","Emma 很经典，也一直是英语环境中熟悉的名字。它不刻意营造某种人设，给人的感觉通常是自然、可靠、好相处。","《老友记》Friends 中出现的 Emma；《艾玛》Emma 多个影视改编版本","适合：真诚、随和、希望名字日常又耐听的人。"],
+ ["Ellie","艾莉","活泼可爱","Ellie 有种明亮、友善的感觉，比正式全名更轻松亲切。它适合喜欢轻快表达、和熟人相处时很有活力的人。","皮克斯动画《飞屋环游记》Up 中的 Ellie；也可联想到《最后生还者》The Last of Us 的 Ellie Williams","适合：有好奇心、心软但有韧性的人。"],
+ ["Sophie","索菲","温柔知性","Sophie 甜而不腻，带一点聪明、沉静的感觉。它既适合日常交友，也不会显得过分幼稚，属于比较容易长期使用的选择。","《妈妈咪呀！》Mamma Mia! 中的 Sophie Sheridan","适合：温和、有分寸、喜欢稳定关系的人。"],
+ ["Lucy","露西","阳光亲切","Lucy 读起来轻快、友好，有种很容易开启对话的亲和力。它不会太正式，也不会过分追逐潮流，整体感觉很自然。","《Lucy》电影中的 Lucy；《我爱露西》I Love Lucy","适合：乐观、善于倾听、重视生活小幸福的人。"]
+ ]},
+ cool:{title:"中性酷感型",en:"THE COOL GIRL",icon:"✦",desc:"你更愿意按自己的方式生活，不太想为了合群改变审美或选择。比起被所有人理解，你可能更在意自由、舒适和做真实的自己。",names:[
+ ["Riley","莱莉","轻松独立","Riley 现代、自然，有种不费力的酷感。它在英语里可用于不同性别，适合不喜欢名字太正式、也不想被固定风格限制的人。","《头脑特工队》Inside Out 中的 Riley Andersen","适合：独立、好奇、喜欢自由安排生活的人。"],
+ ["Quinn","奎因","利落有态度","Quinn 简短、有辨识度，既有中性感，也不难拼写。它像一个不需要刻意强调自己、但很清楚底线的人。","《欢乐合唱团》Glee 中的 Quinn Fabray","适合：有主见、行动果断、不爱拐弯抹角的人。"],
+ ["Taylor","泰勒","随性自然","Taylor 熟悉、易用，也有明显的男女通用属性。它不像某些名字那样强烈指向甜美或正式，更适合自然、不拘一格的风格。","《暮光之城》Twilight 系列中 Taylor 是演员名而非角色名；Taylor 本身是常见中性英文名","适合：适应力强、务实、喜欢自在相处的人。"],
+ ["Jordan","乔丹","运动街头感","Jordan 简洁有力，容易让人联想到运动、行动力和中性风格。它在日常和职场中都不突兀。","《了不起的盖茨比》The Great Gatsby 中的 Jordan Baker","适合：直接、独立、喜欢轻松实用风格的人。"],
+ ["Alex","亚历克斯","干练不设限","Alex 是很常见的中性昵称，亲切又利落。它适合希望名字简单、方便交流，不想被过度风格化的人。","《实习医生格蕾》Grey’s Anatomy 中的 Alex Karev；《橘郡男孩》The O.C. 中的 Alex Kelly","适合：务实、独立、重视真实感的人。"]
+ ]},
+ california:{title:"阳光松弛型",en:"THE CALIFORNIA GIRL",icon:"☼",desc:"你喜欢有空间感的生活：晒太阳、走走看看、临时起意也没关系。你不一定永远乐观，但希望日子别太紧绷，能留一点自由给自己。",names:[
+ ["Summer","萨默","明亮自由","Summer 自带季节联想，轻快、温暖，很适合喜欢户外、旅行和明亮生活感的人。它的风格比传统名字更活泼。","《The O.C.》中的 Summer Roberts","适合：乐观、热爱体验、喜欢轻松节奏的人。"],
+ ["Harper","哈珀","现代活力","Harper 近年在美国很受欢迎，现代感明显，又不会显得太甜。它适合独立、好奇、喜欢在不同圈子间自在切换的人。","迪士尼剧集《少年魔法师》Wizards of Waverly Place 中的 Harper Finkle","适合：有行动力、开放、喜欢尝试新事物的人。"],
+ ["Sydney","悉尼","自信爽朗","Sydney 既熟悉又有一点活泼的都市感。它适合表达自然、做事不拖沓，也不想让名字显得过于正式的人。","《双面女间谍》Alias 中的 Sydney Bristow","适合：适应力强、敢于探索、喜欢主动安排生活的人。"],
+ ["Hailey","海莉","轻快时髦","Hailey 带着当代美式的轻松感，既能搭配运动休闲风，也适合日常社交。整体不沉重，很容易让人记住。","《摩登家庭》Modern Family 中的 Haley Dunphy（同音近似拼写）","适合：爱新鲜事物、重视朋友、喜欢自在表达的人。"],
+ ["Savannah","萨凡纳","温暖开阔","Savannah 听起来柔和但不弱，带一点自然、开阔的氛围。它比 Summer 更成熟一些，也适合喜欢旅行和户外的人。","电影《亲爱的约翰》Dear John 中的 Savannah Curtis","适合：温暖、独立、向往开阔生活的人。"]
+ ]},
+ old:{title:"经典优雅型",en:"THE CLASSIC MUSE",icon:"❀",desc:"你不太追逐每一阵潮流，更愿意选择经得起时间考验的东西。你可能欣赏得体、细节和稳定感，也希望自己的名字在正式与日常场合都合适。",names:[
+ ["Charlotte","夏洛特","经典名媛感","Charlotte 经典、完整，既有优雅气质，也适合现代日常使用。它不需要很夸张的装饰，就能给人稳重而有分寸的印象。","《欲望都市》Sex and the City 中的 Charlotte York","适合：有审美、重视细节、喜欢经典风格的人。"],
+ ["Grace","格蕾丝","简洁优雅","Grace 简短、好记，带有温和而得体的感觉。它不会太甜，也不显得强势，是一个很适合长期使用的名字。","《Will & Grace》中的 Grace Adler","适合：沉稳、真诚、喜欢简约质感的人。"],
+ ["Audrey","奥黛丽","复古精致","Audrey 带有经典电影和复古时尚的联想，优雅但不浮夸。它适合喜欢简洁剪裁、经典单品和耐看审美的人。","《蒂凡尼的早餐》Breakfast at Tiffany’s 的主演 Audrey Hepburn（演员名联想）","适合：审美稳定、细腻、重视质感的人。"],
+ ["Amelia","阿米莉亚","温柔成熟","Amelia 既有柔和感，也有一点独立、坚定的气质。名字完整而不沉重，适合希望温柔与能力并存的人。","《实习医生格蕾》Grey’s Anatomy 中的 Amelia Shepherd","适合：认真、有责任感、温和但有韧性的人。"],
+ ["Violet","维奥莱特","安静有品位","Violet 有一点复古和文学气质，但并不难认。它比 Grace 更有个性，又保留了优雅、安静的感觉。","《超人特攻队》The Incredibles 中的 Violet Parr","适合：安静、有审美、喜欢细节的人。"]
+ ]},
+ indie:{title:"文艺灵感型",en:"THE INDIE GIRL",icon:"☾",desc:"你喜欢的东西不一定要热门，但最好有故事、有情绪、有自己的味道。你可能享受独处，也乐于观察细节；你不需要时时与众不同，只是不想失去自己的感受。",names:[
+ ["Iris","艾 Iris","清醒文艺","Iris 简洁又有辨识度，也有花名与艺术气息的联想。它不算难用，却比特别大众的名字多一点个人风格。","《The Flash》等作品中出现的 Iris West","适合：敏感、观察细致、喜欢艺术或自然的人。"],
+ ["Hazel","海泽尔","复古自然","Hazel 带有自然、复古的气息，温柔但不软弱。它适合喜欢旧书、胶片、自然色系，也不想名字太甜的人。","《The Fault in Our Stars》电影中的 Hazel Grace Lancaster","适合：安静、细腻、重视内在体验的人。"],
+ ["Ruby","露比","鲜活复古","Ruby 有一点复古，也有明亮的生命力。它不像特别梦幻的名字那样飘，反而显得直接、有趣、很有个人色彩。","《童话镇》Once Upon a Time 中的 Ruby / Red","适合：感性、有活力、喜欢复古元素的人。"],
+ ["Zoe","佐伊","灵动好奇","Zoe 短而有劲，听起来活泼、聪明，也有一点俏皮。它适合不太喜欢拘谨规则、愿意探索不同兴趣的人。","《佐伊的超凡歌单》Zoey’s Extraordinary Playlist 中的 Zoey Clarke（近似拼写）","适合：好奇、反应快、喜欢新鲜体验的人。"],
+ ["Luna","露娜","浪漫想象","Luna 近年来很受欢迎，带着温柔、梦幻的联想，但使用时也足够简洁。它适合喜欢夜空、音乐、故事和一点浪漫感的人。","《哈利·波特》系列中的 Luna Lovegood","适合：想象力丰富、包容差异、温柔独特的人。"]
+ ]},
+ power:{title:"知性行动型",en:"THE POWER WOMAN",icon:"✧",desc:"你喜欢把事情想清楚、安排好，再一步步推进。你不一定追求强势，更在意能力、独立和可靠。对你来说，一个好名字最好既自然，也能陪你出现在学习、工作和新的生活阶段。",names:[
+ ["Olivia","奥利维娅","自信全面","Olivia 长期是英语世界里非常常见的名字，优雅但不生硬，既适合日常也适合正式场合。它给人的感觉比较完整、现代。","《丑闻》Scandal 中的 Olivia Pope","适合：有判断力、善于协调、希望名字通用耐看的人。"],
+ ["Natalie","娜塔莉","成熟可靠","Natalie 有成熟、清楚的感觉，不会过分甜美，也不显得冷硬。它适合认真做事、希望别人觉得自己可靠的人。","《复仇者联盟》Marvel 电影中的 Natasha Romanoff 常用名 Natasha；Natalie 在多部作品中出现，辨识度不如《老友记》角色","适合：务实、稳重、做事有计划的人。"],
+ ["Rachel","瑞秋","聪明亲切","Rachel 既有亲切感，也能传达独立和专业。它在英语环境里很熟悉，不会显得刻意追求潮流。","《老友记》Friends 中的 Rachel Green","适合：善于沟通、有责任感、愿意持续成长的人。"],
+ ["Claire","克莱尔","清晰理性","Claire 简洁、干净，有一种条理清楚的感觉。它不需要很强的装饰性，适合偏好效率、清晰沟通和简约风格的人。","《摩登家庭》Modern Family 中的 Claire Dunphy","适合：理性、讲效率、重视边界和秩序的人。"],
+ ["Evelyn","伊芙琳","沉静有韧性","Evelyn 带一点经典感，又有现代使用中的柔和气质。它适合温和但不轻易放弃、习惯用行动解决问题的人。","《木乃伊》The Mummy（1999）中的 Evelyn Carnahan","适合：耐心、独立、愿意长期投入的人。"]
+ ]}
+};
+const questions = [
+ {cat:"EVERYDAY MOMENT",q:"临时空出一个下午，你最可能怎么安排？",help:"想想你平时真的会做的事，不用选看起来最厉害的答案。",opts:[["A","把一直拖着的小事处理掉","power"],["B","约个人吃点东西，顺便聊聊近况","sweet"],["C","去没去过的街区随便逛逛","california"],["D","找个安静地方做自己感兴趣的事","indie"]]},
+ {cat:"NEW PEOPLE",q:"到了一个大家彼此认识、只有你不熟的场合，你会先注意什么？",opts:[["A","谁在聊什么，找个自然的切入口","ice"],["B","现场有什么有趣的事或活动","mean"],["C","有没有人也比较慢热，可以先聊两句","sweet"],["D","先熟悉环境，等话题自然出现","cool"]]},
+ {cat:"SMALL PLEASURES",q:"下面哪种小事最容易让普通的一天变得不错？",opts:[["A","把一件麻烦事终于理顺了","power"],["B","收到朋友分享的好消息","sweet"],["C","意外发现一家很合心意的小店","indie"],["D","天气很好，出门走走就很满足","california"]]},
+ {cat:"PERSONAL TASTE",q:"挑一件会经常使用的东西时，你通常最看重什么？",opts:[["A","简洁耐看，过几年也不会腻","old"],["B","有一个让人记住的小细节","indie"],["C","方便好用，不给生活添麻烦","power"],["D","颜色或造型让人心情变好","mean"]]},
+ {cat:"DECISION STYLE",q:"面对几个都不错的选择，你一般怎么决定？",opts:[["A","列出最在意的条件，再比较","power"],["B","先选当下最有吸引力的那个","california"],["C","问问熟悉我的人怎么看","sweet"],["D","先选一个试试，不合适再调整","cool"]]},
+ {cat:"MISUNDERSTANDING",q:"聊天时发现对方理解错了你的意思，你更可能？",opts:[["A","换个说法把重点讲清楚","power"],["B","用个例子或玩笑把话题带回来","mean"],["C","先确认对方是怎么理解的","sweet"],["D","如果影响不大，就不把它变成大事","ice"]]},
+ {cat:"IDEAL DAY",q:"哪种一天结束时的感觉最让你满意？",opts:[["A","该做的做完了，脑子很清爽","power"],["B","发生了一件没预料到的趣事","california"],["C","和在意的人相处得很自在","sweet"],["D","有一段时间完全按自己的兴趣来","indie"]]},
+ {cat:"FRIENDSHIP",q:"朋友找你商量一件纠结的事，你通常会先做什么？",opts:[["A","帮忙把不同选项和后果理出来","power"],["B","先听对方讲完，确认ta在意什么","sweet"],["C","分享自己的经历，再一起想办法","mean"],["D","问问对方心里其实更倾向哪边","cool"]]},
+ {cat:"TRYING SOMETHING NEW",q:"你第一次接触一个新爱好时，通常会？",opts:[["A","先做一点功课，再开始尝试","old"],["B","先体验再说，边做边学","california"],["C","找个同伴一起入门","mean"],["D","按自己的兴趣慢慢摸索","indie"]]},
+ {cat:"RESET BUTTON",q:"压力有点大时，哪种方式更容易帮你恢复状态？",opts:[["A","把空间和待办事项整理一下","power"],["B","出门活动，换个环境透透气","california"],["C","和信任的人说说话","sweet"],["D","独处一会儿，听歌或看点东西","cool"]]},
+ {cat:"PERSONAL PRIORITY",q:"安排一周生活时，你最希望给什么留出空间？",opts:[["A","自己决定节奏，不被安排得太满","cool"],["B","和朋友、家人好好相处的时间","sweet"],["C","学到新东西或完成一个小目标","power"],["D","留一点余地给临时起意","california"]]},
+ {cat:"YOUR KIND OF STORY",q:"如果最近的生活像一部剧，你更想它是哪种风格？",opts:[["A","人物关系细腻、对白有意思","sweet"],["B","节奏明快，时不时有新展开","mean"],["C","氛围独特，留白多一点也没关系","indie"],["D","情节扎实，角色慢慢成长","old"]]},
+ {cat:"FIRST IMPRESSION",q:"刚认识你的人，通常要相处多久才会发现你的另一面？",opts:[["A","很快就能聊开，熟起来比较自然","mean"],["B","需要共同经历几件事才更放松","old"],["C","看话题对不对，有时一下就熟","cool"],["D","我会先观察，熟了以后话更多","ice"]]},
+ {cat:"UNEXPECTED TASK",q:"突然接到一件没做过的任务，你会先？",opts:[["A","弄清楚要达到什么结果","power"],["B","找一个简单入口，先动起来","california"],["C","看看别人有没有类似经验可参考","old"],["D","试着提出一个不一样的做法","indie"]]},
+ {cat:"NAME VIBE",q:"挑英文名时，下面哪一点对你最重要？",opts:[["A","读起来顺口，日常使用方便","sweet"],["B","听起来有辨识度，但不过分夸张","cool"],["C","经典耐听，正式场合也合适","old"],["D","有一点故事感或特别的联想","indie"]]}
+]
+const letters=["A","B","C","D"];let current=0;let answers=Array(questions.length).fill(null);let finalCategory=null;
+const $=id=>document.getElementById(id);
+function screen(id){document.querySelectorAll(".screen").forEach(s=>s.classList.remove("active"));$(id).classList.add("active");window.scrollTo({top:0,behavior:"smooth"})}
+function renderQuestion(){const q=questions[current];$("stepText").textContent=`QUESTION ${String(current+1).padStart(2,"0")} / 15`;$("percentText").textContent=`已完成 ${Math.round(answers.filter(v=>v!==null).length/15*100)}%`;$("progressBar").style.width=`${(current+1)/15*100}%`;$("qKicker").textContent=q.cat;$("questionText").textContent=q.q;$("questionHelp").textContent=q.help||"选一个最符合你真实状态的答案。";$("options").innerHTML="";q.opts.forEach((o,i)=>{const b=document.createElement("button");b.className="option"+(answers[current]===i?" selected":"");b.type="button";b.setAttribute("aria-pressed",answers[current]===i?"true":"false");b.innerHTML=`<span class="letter">${letters[i]}</span><span class="option-text">${o[1]}</span>`;b.addEventListener("click",()=>{answers[current]=i;renderQuestion();$("errorText").textContent=""});$("options").appendChild(b)});$("prevBtn").style.visibility=current===0?"hidden":"visible";$("nextBtn").textContent=current===14?"查看我的结果 →":"下一题 →";$("errorText").textContent=""}
+function calculate(){const scores=Object.fromEntries(Object.keys(categories).map(k=>[k,0]));answers.forEach((a,i)=>{if(a!==null)scores[questions[i].opts[a][2]]++});const max=Math.max(...Object.values(scores));const tied=Object.keys(scores).filter(k=>scores[k]===max);if(tied.length===1)return tied[0];const last=answers[answers.length-1];const lastCat=questions[14].opts[last][2];if(tied.includes(lastCat))return lastCat;const priority=["sweet","cool","power","ice","california","indie","old","mean"];return priority.find(k=>tied.includes(k))||tied[0]}
+function showResult(){finalCategory=calculate();const c=categories[finalCategory];$("resultIcon").textContent=c.icon;$("resultTitle").textContent=c.title;$("resultEn").textContent=c.en;$("resultDesc").textContent=c.desc;$("nameList").innerHTML="";c.names.forEach((n,i)=>{const card=document.createElement("article");card.className="name-card";card.innerHTML=`<div class="name-top"><div class="name-num">0${i+1}</div><div class="name-main"><h3>${n[0]} <span class="pronounce">${n[1]}</span></h3><div class="name-vibe">${n[2]}</div></div><button class="save-btn" type="button" aria-label="收藏 ${n[0]}">♡ 收藏</button></div><p class="name-copy">${n[3]}</p><div class="show-note"><strong>影视联想：</strong>${n[4]}</div><div class="fit-note">${n[5]}</div>`;const btn=card.querySelector(".save-btn");btn.addEventListener("click",()=>{btn.classList.toggle("saved");const saved=btn.classList.contains("saved");btn.textContent=saved?"✓ 已收藏":"♡ 收藏";btn.setAttribute("aria-pressed",saved?"true":"false");toast(saved?`已标记 ${n[0]}`:`已取消 ${n[0]}`)});$("nameList").appendChild(card)});screen("result")}
+function toast(text){const t=$("toast");t.textContent=text;t.classList.add("show");clearTimeout(window.toastTimer);window.toastTimer=setTimeout(()=>t.classList.remove("show"),1800)}
+$("startBtn").addEventListener("click",()=>{current=0;screen("quiz");renderQuestion()});
+$("prevBtn").addEventListener("click",()=>{if(current>0){current--;renderQuestion();window.scrollTo({top:0,behavior:"smooth"})}});
+$("nextBtn").addEventListener("click",()=>{if(answers[current]===null){$("errorText").textContent="先选一个最符合你的答案吧。";return}if(current<14){current++;renderQuestion();window.scrollTo({top:0,behavior:"smooth"})}else showResult()});
+$("restartBtn").addEventListener("click",()=>{answers=Array(questions.length).fill(null);current=0;finalCategory=null;screen("cover")});
+$("shareBtn").addEventListener("click",async()=>{if(!finalCategory)return;const c=categories[finalCategory];const names=c.names.map(n=>`${n[0]}（${n[2]}）`).join("、");const text=`我的本命英文名人设是：${c.title}｜${c.en}\n${c.desc}\n推荐名字：${names}\n你也来测测你的本命英文名！`;try{if(navigator.share){await navigator.share({title:"测测你的本命英文名",text})}else if(navigator.clipboard&&window.isSecureContext){await navigator.clipboard.writeText(text);toast("结果文案已复制，可以去分享啦")}else{const ta=document.createElement("textarea");ta.value=text;document.body.appendChild(ta);ta.select();document.execCommand("copy");ta.remove();toast("结果文案已复制，可以去分享啦")}}catch(e){if(e.name!=="AbortError")toast("分享暂不可用，请截图保存结果")}});
+
+// Keep the page ready for keyboard and screen-reader users.
+document.addEventListener("keydown",e=>{if(!$("quiz").classList.contains("active"))return;if(["1","2","3","4"].includes(e.key)){answers[current]=Number(e.key)-1;renderQuestion()}if(e.key==="Enter"&&answers[current]!==null){$("nextBtn").click()}});
+</script>
+</body>
+</html>
