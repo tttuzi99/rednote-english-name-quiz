@@ -9,6 +9,19 @@
 </style></head>
 <body><main><div class="card" id="app"><div class="eyebrow">A LITTLE LOVE CHECK · RELATIONSHIP PATTERNS</div><h1>你在亲密关系里，<br>最容易输在哪一步？</h1><p>有时候不是不够喜欢，而是总在相似的地方拧巴：想确认又怕显得在意，受了委屈先说没事，或者一认真就忍不住想很多。</p><p class="muted">12 道日常情境题，看看你在关系里容易卡住的环节，以及可以怎么调整。</p><button class="primary" id="startBtn" type="button">看看我容易卡在哪 →</button><p class="foot">没有标准答案，按你真实会做的选择来答。</p></div></main>
 <script>
+document.addEventListener("DOMContentLoaded", function () {
+  var b = document.getElementById("startBtn");
+  if (b) b.addEventListener("click", function () {
+    var app = document.getElementById("app");
+    app.innerHTML = '<p style="text-align:center;padding:28px 8px">按钮已响应，正在进入测试…</p>';
+    setTimeout(function () {
+      if (typeof window.start === "function") window.start();
+      else app.innerHTML = '<p>页面脚本没有正常启动。请刷新后重试。</p>';
+    }, 0);
+  });
+});
+</script>
+<script>
 const results=[
 {title:"暧昧期：你容易被“不确定”牵着走",emoji:"🔎",subtitle:"关系还没开始，你已经在心里走了好几轮剧情",desc:"你对细节敏感，也很想知道这份喜欢有没有落点。真正消耗你的往往不是对方某一次没回复，而是信息不够时，你会忍不住自己补全答案。",trigger:"对方突然变慢回复、前一天热情今天冷淡、聊得很好却迟迟不约下一次。",auto:"你开始回看聊天记录、比较语气，想找出自己哪里做错了；有时会故意冷一点，看看对方会不会追上来。",impact:"你的注意力被对方的反应占满，却还没有获得更多真实信息。对方可能只感受到你忽冷忽热，而不知道你其实是在不安。",try:"把判断单位从一条消息换成两到三周的持续行为。看三个指标：是否主动发起交流、是否兑现约定、是否愿意推进真实见面。不要用猜测替代一次低压力的确认。",say:"“跟你聊天挺开心的。周末我想去那家新店，你有兴趣一起吗？”",experiment:"接下来 7 天，只做一次清楚的小邀请；发出后不追加试探、不反复解释。把注意力放回自己的安排，观察对方有没有给出明确回应或替代时间。",remind:"你不需要表现得毫不在意才有吸引力。主动表达兴趣不是输，长期只有你一个人推进才值得留意。"},
 {title:"关系升温：你容易把需求包装成“没关系”",emoji:"🤐",subtitle:"你希望对方懂你，却经常不给对方真正理解你的线索",desc:"你可能很重视体贴与和谐，不想显得难相处。于是你把想要的东西说得很轻，把失望藏得很深，再默默观察对方能不能猜中。",trigger:"对方让你选时说随便、临时改计划、忘记你提过的小事，或你想要更多陪伴却担心显得黏人。",auto:"你先说“都可以”“没事”，心里却记下一笔；对方没有察觉时，你会觉得自己不被重视，甚至开始减少表达。",impact:"对方收到的是“这件事没问题”，你心里积累的却是“他怎么总是不懂我”。双方可能都觉得委屈，却不知道真正的分歧在哪里。",try:"把暗示改成具体、可执行、允许协商的请求。不要用“你从来不在乎我”开头，改成说清哪件事、你的感受、你希望下次怎么做。",say:"“我刚才说都可以，其实我更想去这家。下次如果要改计划，能不能提前告诉我？我会比较好安排。”",experiment:"一周内挑一件低风险的小事，直接说出真实偏好。不要先道歉，也不用立刻补一句“算了都行”；练习让对方有机会回应真正的你。",remind:"需求不是麻烦，表达也不是控制。你可以提出请求，对方也可以协商；重点是你们能不能认真对待彼此。"},
