@@ -65,7 +65,7 @@ function renderQuestion(){
 const q=qs[index];const percent=Math.round(index/qs.length*100);
 app.innerHTML='<div class="topline"><span>动物塑探索</span><span>第 '+(index+1)+' / '+qs.length+' 题</span></div><div class="progress"><div class="bar" style="width:'+percent+'%"></div></div><h2>'+q[0]+'</h2><div>'+q[1].map((x,j)=>'<button class="option" onclick="pick('+j+')"><span class="letter">'+String.fromCharCode(65+j)+'</span><span>'+x+'</span></button>').join('')+'</div><div class="nav">'+(index?'<button class="secondary" onclick="back()">← 上一题</button>':'<button class="secondary" onclick="home()">返回介绍</button>')+'</div>';
 }
-function home(){app.innerHTML='<h1>你是什么动物塑？</h1><p>如果把你的性格比作一种动物，会是什么？从相处方式、直觉反应和生活节奏里，找到最像你的动物原型。</p><div><span class="pill">15 道选择题</span><span class="pill">约 3 分钟</span><span class="pill">8 种动物原型</span></div><button class="primary" onclick="start()">开始看看 →</button><p class="foot">没有标准答案，凭第一直觉选就好。</p>'}
+function home(){app.innerHTML='<h1>你是什么动物塑？</h1><p>如果把你的性格比作一种动物，会是什么？从相处方式、直觉反应和生活节奏里，找到最像你的动物原型。</p><div><span class="pill">15 道选择题</span><span class="pill">约 3 分钟</span><span class="pill">凭直觉作答</span></div><button class="primary" onclick="start()">开始看看 →</button><p class="foot">没有标准答案，凭第一直觉选就好。</p>'}
 function back(){if(index>0){index--;renderQuestion();}}
 function pick(n){answers[index]=n;if(document.activeElement&&document.activeElement.blur)document.activeElement.blur();if(index<qs.length-1){index++;renderQuestion();}else finish();}
 function finish(){
