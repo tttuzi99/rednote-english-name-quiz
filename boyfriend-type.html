@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#f6f1ed">
+<title>你最适配哪种男生？</title>
+<style>
+:root{--ink:#302d2c;--muted:#817873;--paper:#f6f1ed;--card:#fffdfa;--accent:#a56f76;--line:#eadfdc;--soft:#f5e9e8}
+*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;padding:22px 14px}main{max-width:620px;margin:0 auto}.card{background:var(--card);border:1px solid #eadfdc99;border-radius:24px;padding:clamp(20px,5vw,34px);box-shadow:0 12px 36px #533c2d0a}.eyebrow{font-size:11px;letter-spacing:.15em;color:var(--accent);font-weight:750}.muted{color:var(--muted);font-size:14px}h1{font-size:clamp(29px,7vw,39px);line-height:1.25;letter-spacing:-.04em;margin:14px 0}h2{font-size:22px;line-height:1.45;margin:18px 0}p{margin:10px 0}button{font:inherit;cursor:pointer}.primary,.secondary{border-radius:14px;padding:13px 16px;font-weight:650}.primary{display:block;width:100%;border:0;background:var(--accent);color:white;margin-top:22px}.secondary{background:transparent;border:1px solid var(--line);color:var(--ink)}.option{display:flex;align-items:flex-start;gap:12px;text-align:left;width:100%;background:#fff;border:1px solid var(--line);border-radius:15px;padding:13px 14px;margin:10px 0;color:var(--ink);line-height:1.5;min-height:52px}.option.selected{border-color:var(--accent);background:var(--soft)}.letter{display:grid;place-items:center;flex:0 0 27px;height:27px;border-radius:9px;background:#f6efec;color:var(--accent);font-size:12px;font-weight:700}.option.selected .letter{background:var(--accent);color:white}.progress{height:5px;background:#eee4e0;border-radius:9px;overflow:hidden;margin:12px 0 24px}.bar{height:100%;background:var(--accent)}.topline{display:flex;justify-content:space-between;gap:12px;font-size:13px;color:var(--muted)}.nav{display:flex;gap:10px;margin-top:18px}.nav button{width:100%}.result{text-align:center;padding:8px 0 16px}.emoji{font-size:56px;line-height:1.4}.result-copy{background:#fff;border:1px solid var(--line);border-radius:16px;padding:16px;margin:12px 0}.tags{display:flex;justify-content:center;flex-wrap:wrap;gap:7px;margin:12px 0}.tag{border-radius:99px;background:var(--soft);padding:5px 10px;font-size:13px;color:#81535a}.item{padding:10px 0;border-top:1px solid var(--line)}.foot{text-align:center;color:var(--muted);font-size:12px;margin-top:18px}button:focus-visible{outline:3px solid #c99ba1;outline-offset:3px}
+</style>
+</head>
+<body><main><div class="card" id="app"><div class="eyebrow">A LITTLE LOVE CHECK · RELATIONSHIP STYLE</div><h1>你最适配哪种男生？</h1><p>比起“理想型清单”，真正适合你的人，可能藏在你的相处节奏、情绪需求和边界感里。</p><p class="muted">12 道日常情境题，看看什么样的相处方式更容易让你舒服、安心又心动。</p><button class="primary" onclick="start()">开始看看 →</button></div></main>
+<script>
+const types=[
+{name:"稳定行动派",emoji:"🌿",subtitle:"不靠猜，靠一次次做到",desc:"你可能更适合情绪相对稳定、说到做到、愿意把关系落在日常里的男生。他不一定最会制造惊喜，但会记得你的需求，也愿意在问题出现时一起处理。",tags:["靠谱","情绪稳定","持续投入"],green:"答应的事有回应；发生分歧时愿意沟通；尊重你的时间和独立生活。",date:"一起散步、逛展、做饭或安排一趟不赶行程的小旅行。比起排场，你更容易从细节里感受到在乎。",watch:"别把“稳定”误认为“没有表达”。你也值得被主动关心和明确喜欢。",meet:"朋友介绍、兴趣社群、长期课程或能多次自然接触的活动。"},
+{name:"温柔共情派",emoji:"☁️",subtitle:"先理解你，再一起想办法",desc:"你更容易被愿意倾听、能接住情绪，也不急着评判你的男生吸引。他不需要每次都给出完美答案，但会认真理解你的感受，让你不必总是把自己解释得很清楚。",tags:["共情力","耐心","情绪交流"],green:"认真听你说话；不会用玩笑贬低你的感受；既能安慰，也能坦诚表达自己。",date:"找家舒服的小店慢慢聊天、一起看电影后交换感受，或者分享彼此最近在意的小事。",watch:"共情不等于凡事都顺着你。能温柔表达不同意见、一起解决问题，也很重要。",meet:"读书会、电影活动、志愿活动、朋友的小型聚会。"},
+{name:"有趣活力派",emoji:"☀️",subtitle:"和他在一起，生活会多一点亮色",desc:"你可能需要一个愿意分享新鲜体验、能接梗也能认真起来的男生。你们可以一起探索城市、临时起意出门，也能在普通日子里创造共同的小乐趣。",tags:["幽默感","行动力","新鲜感"],green:"有趣但不拿你开恶意玩笑；约会有来有回；热闹之外也愿意认真听你说话。",date:"逛市集、玩桌游、尝试新运动、看现场演出，或一起去没去过的街区探索。",watch:"别只看聊天有多好玩，也留意他在承诺、尊重和冲突处理上的表现。",meet:"兴趣活动、运动体验课、桌游局、演出或旅行中的社交场景。"},
+{name:"温柔浪漫派",emoji:"🌷",subtitle:"把喜欢说出来，也做出来",desc:"你容易被有表达欲、愿意经营仪式感的男生打动。你在意的未必是昂贵礼物，而是对方有没有留心你的喜好，愿不愿意主动创造值得记住的时刻。",tags:["表达爱意","细节感","仪式感"],green:"会主动表达喜欢；记得你说过的小事；浪漫不是表演，也能落实在日常关心里。",date:"一起看日落、交换歌单、计划一场主题约会，或认真庆祝一个只属于你们的小纪念日。",watch:"甜言蜜语要和实际行动对得上；别因为一次浪漫就忽略长期相处的感受。",meet:"音乐、艺术、摄影、手作等兴趣活动，或朋友组织的轻松聚会。"},
+{name:"独立并肩派",emoji:"🪴",subtitle:"亲密，但不互相消耗",desc:"你可能更适合有自己的生活，也愿意尊重你个人空间的男生。你希望关系是两个人主动靠近，而不是全天候报备、反复确认或牺牲自己的兴趣来证明爱。",tags:["边界感","独立","平等关系"],green:"尊重彼此的朋友和爱好；能商量而不是控制；忙的时候会说明，也愿意为关系留时间。",date:"各自做喜欢的事再分享成果、一起培养一项共同爱好，或安排有自由时间的旅行。",watch:"独立不是冷淡或回避沟通。健康的空间感仍然包含回应、承诺和情感投入。",meet:"专业社群、运动俱乐部、课程、创作活动，或共同兴趣的线上线下社群。"},
+{name:"聪明成长派",emoji:"📚",subtitle:"能聊得来，也能一起成长",desc:"你容易欣赏有好奇心、愿意交流观点、对生活有想法的男生。吸引你的不只是聪明，而是他能认真讨论、承认自己不知道，也愿意和你一起拓展世界。",tags:["思维共鸣","好奇心","共同成长"],green:"尊重不同观点；不把讨论变成说教；愿意学习和调整，也欣赏你的能力。",date:"逛博物馆、看展、听分享会、一起学新技能，或者找个话题聊到忘记时间。",watch:"观点相合不代表关系一定合适。还要观察价值观、生活习惯和情绪沟通是否匹配。",meet:"讲座、读书会、行业活动、语言交换、课程和长期兴趣小组。"}
+];
+const qs=[
+["和喜欢的人相处，你最希望有哪种感觉？",["不用反复猜他在不在乎我","我的情绪能被认真听见","每天都有新鲜事和笑点","能感受到他主动表达喜欢"]],
+["忙了一天之后，你更期待对方？",["记得约定，帮我把现实问题安排好","先听我讲讲今天发生了什么","带我换个环境，做点有趣的事","给我一点贴心的小惊喜"]],
+["发生意见不合时，你最看重？",["愿意正面沟通并一起解决","先理解双方为什么会这样想","别冷战，能把话说开就好","即使不同意，也能温和表达"]],
+["你理想中的周末更接近？",["舒服地吃饭散步，节奏不赶","找个地方聊天，分享最近的心事","临时起意去玩点没试过的","安排一场有纪念感的小约会"]],
+["关于个人空间，你希望？",["各自忙碌，但说好的事会做到","我需要独处时，他能理解我的状态","有共同活动，也保留各自爱好","即使各忙各的，也会表达想念"]],
+["哪种特质最容易让你心动？",["言行一致，遇事不逃避","细腻体贴，能察觉我的情绪","幽默有活力，和我玩得到一起","会主动表达心意，留意我的喜好"]],
+["你更喜欢怎样的聊天？",["聊生活安排，也能聊现实计划","能说心事，不怕被评价","互相接梗，话题自然不断","分享喜欢的东西，也会说真心话"]],
+["对未来关系，你更期待？",["慢慢建立信任，稳定地走下去","彼此支持，难过时有个依靠","一起体验更多新事物","认真经营关系，留下共同回忆"]],
+["当你遇到挫折时，希望他？",["和我一起梳理问题，提供实际支持","先关心我的感受，再问我需要什么","带我暂时走出情绪，换个心情","用具体的小行动让我感到被惦记"]],
+["你不太能接受哪种相处状态？",["承诺很多，却总是做不到","我的感受总被说成想太多","相处越来越无聊，缺少交流","明明在一起，却很少表达在乎"]],
+["你欣赏怎样的生活态度？",["踏实、有责任感，做事有交代","温和开放，愿意理解不同的人","好奇心强，愿意尝试新体验","对生活有热情，也愿意用心经营"]],
+["判断一段关系是否适合你，你最在意？",["长期相处是否可靠、安心","能不能自在做自己、互相理解","在一起是否轻松、有活力","彼此是否持续表达喜欢和珍惜"]]
+];
+// 每题四个选项依次映射四种相处需求，轮换位置以避免固定选项总对应同一结果。
+const map=[[0,1,2,3],[0,1,2,3],[0,1,4,3],[0,1,2,3],[0,1,4,3],[0,1,2,3],[0,1,2,3],[0,1,2,3],[0,1,2,3],[0,1,2,3],[0,1,2,3],[0,1,4,5]];
+let index=0,answers=[];const app=document.getElementById("app");
+function home(){index=0;answers=[];app.innerHTML='<div class="eyebrow">A LITTLE LOVE CHECK · RELATIONSHIP STYLE</div><h1>你最适配哪种男生？</h1><p>比起“理想型清单”，真正适合你的人，可能藏在你的相处节奏、情绪需求和边界感里。</p><p class="muted">12 道日常情境题，看看什么样的相处方式更容易让你舒服、安心又心动。</p><button class="primary" onclick="start()">开始看看 →</button>';}
+function start(){index=0;answers=[];app.replaceChildren();renderQuestion();window.scrollTo({top:0,behavior:"smooth"});}
+function renderQuestion(){const q=qs[index],percent=Math.round(index/qs.length*100);app.innerHTML='<div class="topline"><span>恋爱相处偏好</span><span>第 '+(index+1)+' / '+qs.length+' 题</span></div><div class="progress"><div class="bar" style="width:'+percent+'%"></div></div><h2>'+q[0]+'</h2><div>'+q[1].map((x,j)=>'<button class="option'+(answers[index]===j?' selected':'')+'" onclick="pick('+j+')"><span class="letter">'+String.fromCharCode(65+j)+'</span><span>'+x+'</span></button>').join('')+'</div><div class="nav">'+(index?'<button class="secondary" onclick="back()">← 上一题</button>':'<button class="secondary" onclick="home()">返回介绍</button>')+'</div>';}
+function back(){if(index>0){index--;renderQuestion();}}
+function pick(n){answers[index]=n;if(document.activeElement&&document.activeElement.blur)document.activeElement.blur();if(index<qs.length-1){index++;renderQuestion();}else finish();}
+function finish(){const scores=Array(types.length).fill(0);answers.forEach((a,q)=>scores[map[q][a]]++);const sorted=scores.map((v,i)=>({v,i})).sort((a,b)=>b.v-a.v);const win=sorted[0].i,second=sorted.find(x=>x.i!==win).i,t=types[win];app.innerHTML='<div class="result"><div class="eyebrow">YOUR RELATIONSHIP MATCH</div><div class="emoji">'+t.emoji+'</div><p class="muted">你可能更适配</p><h2>'+t.name+'</h2><p>'+t.subtitle+'</p><p>'+t.desc+'</p><div class="tags">'+t.tags.map(x=>'<span class="tag">'+x+'</span>').join('')+'</div></div><div class="result-copy"><strong>你在关系里需要什么</strong><p>'+t.desc+'</p><div class="item"><strong>值得留意的绿色信号</strong><p>'+t.green+'</p></div><div class="item"><strong>适合你们的约会方式</strong><p>'+t.date+'</p></div><div class="item"><strong>你的关系提醒</strong><p>'+t.watch+'</p></div></div><div class="result-copy"><strong>去哪里更容易遇见这类人？</strong><p>'+t.meet+'</p><p class="muted">重点不是去某个地方“捞人”，而是在你喜欢的生活场景里，认识能自然相处的人。</p></div><div class="result-copy"><strong>你的第二适配倾向</strong><p>'+types[second].emoji+' '+types[second].name+'：你也可能需要这类相处特质。现实中的人通常是多种特质的组合，不必把任何人塞进单一标签。</p></div><div class="nav"><button class="primary" onclick="copyResult('+win+')">复制我的结果</button><button class="secondary" onclick="start()">重新测试 ↻</button></div><p class="foot">这是关于恋爱偏好与相处需求的趣味探索，不是对未来伴侣的定论。真正合适的人，会尊重你，也愿意和你一起沟通。</p>';window.scrollTo({top:0,behavior:"smooth"});}
+function copyResult(i){const t=types[i],text='我测出的适配男生类型是：'+t.emoji+t.name+'。'+t.subtitle+'\n'+t.desc+'\n你最适配哪种相处方式？';if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(text).then(()=>alert("结果文案已复制！")).catch(()=>fallback(text));}else fallback(text);}
+function fallback(text){const el=document.createElement("textarea");el.value=text;document.body.appendChild(el);el.select();try{document.execCommand("copy");alert("结果文案已复制！");}catch(e){alert(text);}el.remove();}
+</script></body></html>
