@@ -7,7 +7,7 @@
 :root{--ink:#302d2c;--muted:#817873;--paper:#f6f1ed;--card:#fffdfa;--accent:#a56f76;--line:#eadfdc;--soft:#f5e9e8}
 *{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;padding:22px 14px}main{max-width:620px;margin:0 auto}.card{background:var(--card);border:1px solid #eadfdc99;border-radius:24px;padding:clamp(20px,5vw,34px);box-shadow:0 12px 36px #533c2d0a}.eyebrow{font-size:11px;letter-spacing:.12em;color:var(--accent);font-weight:750}.muted{color:var(--muted);font-size:14px}h1{font-size:clamp(28px,7vw,38px);line-height:1.28;letter-spacing:-.04em;margin:14px 0}h2{font-size:22px;line-height:1.45;margin:18px 0}p{margin:10px 0}button{font:inherit;cursor:pointer}.primary,.secondary{border-radius:14px;padding:13px 16px;font-weight:650}.primary{display:block;width:100%;border:0;background:var(--accent);color:white;margin-top:22px}.secondary{background:transparent;border:1px solid var(--line);color:var(--ink)}.option{display:flex;align-items:flex-start;gap:12px;text-align:left;width:100%;background:#fff;border:1px solid var(--line);border-radius:15px;padding:13px 14px;margin:10px 0;color:var(--ink);line-height:1.5;min-height:52px}.option.selected{border-color:var(--accent);background:var(--soft)}.letter{display:grid;place-items:center;flex:0 0 27px;height:27px;border-radius:9px;background:#f6efec;color:var(--accent);font-size:12px;font-weight:700}.progress{height:5px;background:#eee4e0;border-radius:9px;overflow:hidden;margin:12px 0 24px}.bar{height:100%;background:var(--accent)}.topline{display:flex;justify-content:space-between;gap:12px;font-size:13px;color:var(--muted)}.nav{display:flex;gap:10px;margin-top:18px}.nav button{width:100%}.result{text-align:center;padding:8px 0 16px}.emoji{font-size:54px;line-height:1.4}.result-copy{background:#fff;border:1px solid var(--line);border-radius:16px;padding:16px;margin:12px 0}.tagline{display:inline-block;border-radius:99px;background:var(--soft);padding:5px 10px;font-size:13px;color:#81535a;margin:4px}.item{padding:10px 0;border-top:1px solid var(--line)}.foot{text-align:center;color:var(--muted);font-size:12px;margin-top:18px}button:focus-visible{outline:3px solid #c99ba1;outline-offset:3px}
 </style></head>
-<body><main><div class="card" id="app"><div class="eyebrow">A LITTLE LOVE CHECK · RELATIONSHIP PATTERNS</div><h1>你在亲密关系里，<br>最容易输在哪一步？</h1><p>有时候不是不够喜欢，而是总在相似的地方拧巴：想确认又怕显得在意，受了委屈先说没事，或者一认真就忍不住想很多。</p><p class="muted">12 道日常情境题，看看你在关系里容易卡住的环节，以及可以怎么调整。</p><button class="primary" onclick="start()">看看我容易卡在哪 →</button><p class="foot">没有标准答案，按你真实会做的选择来答。</p></div></main>
+<body><main><div class="card" id="app"><div class="eyebrow">A LITTLE LOVE CHECK · RELATIONSHIP PATTERNS</div><h1>你在亲密关系里，<br>最容易输在哪一步？</h1><p>有时候不是不够喜欢，而是总在相似的地方拧巴：想确认又怕显得在意，受了委屈先说没事，或者一认真就忍不住想很多。</p><p class="muted">12 道日常情境题，看看你在关系里容易卡住的环节，以及可以怎么调整。</p><button class="primary" id="startBtn" type="button">看看我容易卡在哪 →</button><p class="foot">没有标准答案，按你真实会做的选择来答。</p></div></main>
 <script>
 const results=[
 {title:"暧昧期：你容易被“不确定”牵着走",emoji:"🔎",subtitle:"关系还没开始，你已经在心里走了好几轮剧情",desc:"你对细节敏感，也很想知道这份喜欢有没有落点。真正消耗你的往往不是对方某一次没回复，而是信息不够时，你会忍不住自己补全答案。",trigger:"对方突然变慢回复、前一天热情今天冷淡、聊得很好却迟迟不约下一次。",auto:"你开始回看聊天记录、比较语气，想找出自己哪里做错了；有时会故意冷一点，看看对方会不会追上来。",impact:"你的注意力被对方的反应占满，却还没有获得更多真实信息。对方可能只感受到你忽冷忽热，而不知道你其实是在不安。",try:"把判断单位从一条消息换成两到三周的持续行为。看三个指标：是否主动发起交流、是否兑现约定、是否愿意推进真实见面。不要用猜测替代一次低压力的确认。",say:"“跟你聊天挺开心的。周末我想去那家新店，你有兴趣一起吗？”",experiment:"接下来 7 天，只做一次清楚的小邀请；发出后不追加试探、不反复解释。把注意力放回自己的安排，观察对方有没有给出明确回应或替代时间。",remind:"你不需要表现得毫不在意才有吸引力。主动表达兴趣不是输，长期只有你一个人推进才值得留意。"},
@@ -51,4 +51,14 @@ window.back = back;
 window.pick = pick;
 window.finish = finish;
 window.copyResult = copyResult;
+
+document.addEventListener("click", function(event) {
+  const button = event.target.closest("button");
+  if (!button) return;
+  if (button.id === "startBtn") { start(); return; }
+  if (button.matches(".option")) {
+    const match = button.getAttribute("onclick")?.match(/pick\((\d+)\)/);
+    if (match) { pick(Number(match[1])); return; }
+  }
+});
 </script></body></html>
