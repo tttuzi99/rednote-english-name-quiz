@@ -44,4 +44,11 @@ function back(){if(index>0){index--;render();}}
 function pick(n){answers[index]=n;if(index<qs.length-1){index++;render();}else finish();}
 function finish(){const scores=Array(6).fill(0);answers.forEach((a,i)=>scores[key[i][a]]++);const sorted=scores.map((v,i)=>({v,i})).sort((a,b)=>b.v-a.v);const win=sorted[0].i,r=results[win];app.innerHTML='<div class="result"><div class="eyebrow">YOUR RELATIONSHIP PATTERN</div><div class="emoji">'+r.emoji+'</div><p class="muted">你在亲密关系里最容易卡在</p><h2>'+r.title+'</h2><p>'+r.subtitle+'</p><p>'+r.desc+'</p></div><div class="result-copy"><strong>你可能会遇到的问题</strong><p>'+r.trigger+'</p><p>'+r.auto+'</p><p class="muted">这样下去：'+r.impact+'</p></div><div class="result-copy"><strong>可以怎么调整</strong><p>'+r.try+'</p><p><strong>可以直接这样说：</strong><br>“'+r.say+'”</p><p><strong>这周试着做一件小事：</strong><br>'+r.experiment+'</p></div><p>'+r.remind+'</p><button class="primary" onclick="copyResult('+win+')">复制我的关系建议</button><button class="secondary" style="width:100%;margin-top:10px" onclick="start()">重新测试 ↻</button><p class="foot">这是一份恋爱相处模式的趣味自我探索，不是心理诊断，也不代表关系的唯一结论。若关系中存在持续的控制、威胁或伤害，请优先考虑自身安全并寻求可信任的支持。</p>';window.scrollTo({top:0,behavior:"smooth"});}\nfunction copyResult(i){const r=results[i],text='我在亲密关系里最容易卡在：'+r.title+'\n'+r.subtitle+'\n'+r.try+'\n你也来看看自己容易在哪一步卡住。';if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(text).then(()=>alert('结果文案已复制！')).catch(()=>fallback(text));}else fallback(text);}
 function fallback(text){const el=document.createElement('textarea');el.value=text;document.body.appendChild(el);el.select();try{document.execCommand('copy');alert('结果文案已复制！')}catch(e){alert(text)}el.remove();}
+// Use explicit global handlers for mobile/in-app browsers that may mishandle inline handlers.
+window.start = start;
+window.intro = intro;
+window.back = back;
+window.pick = pick;
+window.finish = finish;
+window.copyResult = copyResult;
 </script></body></html>
