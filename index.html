@@ -14,6 +14,21 @@
 .result-head{text-align:center;padding:27px 20px;background:linear-gradient(145deg,#fbfaf6,#edf0e9)}.result-icon{width:60px;height:60px;margin:0 auto 12px;display:grid;place-items:center;border-radius:50%;background:#dfe6d9;font-size:26px}.result-label{font-size:11px;letter-spacing:.18em;color:var(--sage-dark);font-weight:700}.result-head h2{font-size:29px;margin:7px 0 2px;line-height:1.3}.result-head .en-title{font-size:14px;color:#535d68;letter-spacing:.05em}.result-desc{max-width:510px;margin:14px auto 0;color:#414a54;font-size:14px}.result-tags{display:flex;justify-content:center;gap:7px;flex-wrap:wrap;margin-top:17px}.tag{font-size:11px;padding:5px 10px;border-radius:99px;background:#fffdfa;border:1px solid #e8e4dc;color:#4b5560}.section-title{font-size:18px;margin:25px 2px 5px}.section-sub{font-size:12px;color:var(--muted);margin:0 2px 13px}.name-list{display:grid;gap:12px}.name-card{background:var(--paper);border:1px solid #eee7df;border-radius:19px;padding:17px 17px 16px;box-shadow:0 5px 16px #4d43380a}.name-top{display:flex;align-items:flex-start;gap:12px}.name-num{width:32px;height:32px;flex:0 0 32px;border-radius:11px;background:#e9ede4;display:grid;place-items:center;color:#6d7c68;font-size:12px;font-weight:700}.name-main{flex:1}.name-main h3{margin:0;font-size:21px;line-height:1.3}.pronounce{font-size:12px;color:#59636f;margin-left:6px;font-weight:400} .name-vibe{display:none}.save-btn{border:1px solid #e5ded5;background:#faf7f2;color:#77756d;border-radius:10px;padding:6px 9px;font-size:11px;white-space:nowrap}.save-btn.saved{background:#e8eee4;border-color:#c9d4c2;color:#65755e}.name-copy{font-size:13px;color:#343d46;margin:13px 0 10px}.show-note{border-left:2px solid #d8c4b8;padding:1px 0 1px 10px;font-size:12px;color:#4b5560}.show-note strong{color:#343d46;font-weight:650}.fit-note{font-size:12px;color:#59636f;margin-top:8px}.result-bottom{margin-top:22px;padding:19px;background:#eeece5;border-radius:18px}.result-bottom h3{font-size:15px;margin:0 0 7px}.result-bottom p{font-size:13px;color:#414a54;margin:0}.bottom-actions{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:17px}.bottom-actions button{width:100%}.smallprint{font-size:11px;color:#59636f;text-align:center;margin-top:20px}.toast{position:fixed;left:50%;bottom:22px;transform:translate(-50%,15px);background:#464b43;color:white;border-radius:99px;padding:10px 16px;font-size:12px;opacity:0;pointer-events:none;transition:.2s;z-index:9}.toast.show{opacity:1;transform:translate(-50%,0)}
 @media(min-width:600px){.app{padding-top:28px}.hero{padding:45px 42px 38px}.quiz-card{padding:30px}.name-list{grid-template-columns:1fr 1fr}.name-card{height:100%}.result-head{padding:35px 35px}}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+
+.preview-section{padding:26px 0 8px}
+.preview-heading{text-align:center;padding:0 8px 18px}
+.preview-heading h2{font-size:23px;line-height:1.35;margin:9px 0 7px;letter-spacing:-.025em}
+.preview-heading p{max-width:500px;margin:0 auto;color:#414a54;font-size:14px;line-height:1.65}
+.preview-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.preview-card{display:flex;align-items:flex-start;gap:10px;min-width:0;padding:14px 12px;background:#fff;border:1px solid #d5dbe2;border-radius:16px;box-shadow:0 5px 16px rgba(35,45,55,.04)}
+.preview-icon{flex:0 0 31px;width:31px;height:31px;display:grid;place-items:center;border-radius:10px;background:#eef1e9;color:#3e5942;font-size:17px}
+.preview-card h3{font-size:13px;line-height:1.4;margin:0 0 5px;color:#20252b}
+.preview-card p{font-size:12px;line-height:1.5;color:#414a54;margin:0 0 8px}
+.preview-card span:last-child{font-size:9px;line-height:1.4;letter-spacing:.06em;color:#59636f;font-weight:700;overflow-wrap:anywhere}
+.preview-start{margin-top:16px}
+@media(max-width:360px){.preview-grid{grid-template-columns:1fr}.preview-card{padding:13px 14px}.preview-card p{font-size:13px}}
+@media(min-width:600px){.preview-section{padding:35px 0 12px}.preview-grid{grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}.preview-card{display:block;padding:16px}.preview-icon{margin-bottom:11px}.preview-card h3{font-size:14px}.preview-heading h2{font-size:27px}}
+
 </style>
 </head>
 <body>
@@ -29,6 +44,21 @@
       <div class="note">没有标准答案，选最像自己的那一个就好。</div>
       <div class="decor">A name that feels like you</div>
     </div></div>
+
+    <section class="preview-section" aria-label="八种测试结果预览">
+      <div class="preview-heading"><span class="eyebrow">DISCOVER YOUR VIBE</span><h2>8 种风格，哪一种更像你？</h2><p>先看看可能遇见的结果，再开始测试。最终会根据你的答案推荐适合的英文名。</p></div>
+      <div class="preview-grid">
+        <article class="preview-card"><span class="preview-icon">❄</span><div><h3>冷感掌控型</h3><p>冷静自持，有主见，也有自己的边界。</p><span>THE ICE QUEEN</span></div></article>
+        <article class="preview-card"><span class="preview-icon">★</span><div><h3>美式校园主角型</h3><p>自信有活力，擅长互动，存在感鲜明。</p><span>THE CAMPUS IT GIRL</span></div></article>
+        <article class="preview-card"><span class="preview-icon">♡</span><div><h3>甜美亲和型</h3><p>真诚温暖，重视关系里的舒服与理解。</p><span>THE SWEETHEART</span></div></article>
+        <article class="preview-card"><span class="preview-icon">✦</span><div><h3>中性酷感型</h3><p>自在独立，不被固定风格或期待限制。</p><span>THE COOL GIRL</span></div></article>
+        <article class="preview-card"><span class="preview-icon">☼</span><div><h3>阳光松弛型</h3><p>喜欢自由和新鲜感，生活不必太紧绷。</p><span>THE CALIFORNIA GIRL</span></div></article>
+        <article class="preview-card"><span class="preview-icon">❀</span><div><h3>经典优雅型</h3><p>偏爱耐看与得体，温柔从容、不追潮流。</p><span>THE CLASSIC MUSE</span></div></article>
+        <article class="preview-card"><span class="preview-icon">☾</span><div><h3>文艺灵感型</h3><p>感受力强，喜欢细节、故事和独特审美。</p><span>THE INDIE GIRL</span></div></article>
+        <article class="preview-card"><span class="preview-icon">✧</span><div><h3>知性行动型</h3><p>理性可靠，目标清楚，也重视独立选择。</p><span>THE POWER WOMAN</span></div></article>
+      </div>
+      <button class="primary full preview-start" type="button" id="previewStartBtn">开始测试，找到我的结果 →</button>
+    </section>
   </section>
 
   <section id="quiz" class="screen">
@@ -145,7 +175,7 @@ function renderQuestion(){const q=questions[current];$("stepText").textContent=`
 function calculate(){const scores=Object.fromEntries(Object.keys(categories).map(k=>[k,0]));answers.forEach((a,i)=>{if(a!==null)scores[questions[i].opts[a][2]]++});const max=Math.max(...Object.values(scores));const tied=Object.keys(scores).filter(k=>scores[k]===max);if(tied.length===1)return tied[0];const last=answers[answers.length-1];const lastCat=questions[14].opts[last][2];if(tied.includes(lastCat))return lastCat;const priority=["sweet","cool","power","ice","california","indie","old","mean"];return priority.find(k=>tied.includes(k))||tied[0]}
 function showResult(){finalCategory=calculate();const c=categories[finalCategory];$("resultIcon").textContent=c.icon;$("resultTitle").textContent=c.title;$("resultEn").textContent=c.en;$("resultDesc").textContent=c.desc;$("resultTags").innerHTML=c.tags.map(t=>`<span class="tag">${t}</span>`).join("");$("nameList").innerHTML="";c.names.forEach((n,i)=>{const card=document.createElement("article");card.className="name-card";card.innerHTML=`<div class="name-top"><div class="name-num">0${i+1}</div><div class="name-main"><h3>${n[0]} <span class="pronounce">${n[1]}</span></h3><div class="name-vibe">${n[2]}</div></div><button class="save-btn" type="button" aria-label="收藏 ${n[0]}">♡ 收藏</button></div><p class="name-copy">${n[3]}</p><div class="show-note"><strong>影视联想：</strong>${n[4]}</div><div class="fit-note">${n[5]}</div>`;const btn=card.querySelector(".save-btn");btn.addEventListener("click",()=>{btn.classList.toggle("saved");const saved=btn.classList.contains("saved");btn.textContent=saved?"✓ 已收藏":"♡ 收藏";btn.setAttribute("aria-pressed",saved?"true":"false");toast(saved?`已标记 ${n[0]}`:`已取消 ${n[0]}`)});$("nameList").appendChild(card)});screen("result")}
 function toast(text){const t=$("toast");t.textContent=text;t.classList.add("show");clearTimeout(window.toastTimer);window.toastTimer=setTimeout(()=>t.classList.remove("show"),1800)}
-$("startBtn").addEventListener("click",()=>{current=0;screen("quiz");renderQuestion()});
+$("startBtn").addEventListener("click",()=>{current=0;screen("quiz");renderQuestion()});$("previewStartBtn").addEventListener("click",()=>{current=0;screen("quiz");renderQuestion()});
 $("prevBtn").addEventListener("click",()=>{if(current>0){current--;renderQuestion();window.scrollTo({top:0,behavior:"smooth"})}});
 $("nextBtn").addEventListener("click",()=>{if(answers[current]===null){$("errorText").textContent="先选一个最符合你的答案吧。";return}if(current<14){current++;renderQuestion();window.scrollTo({top:0,behavior:"smooth"})}else showResult()});
 $("restartBtn").addEventListener("click",()=>{answers=Array(questions.length).fill(null);current=0;finalCategory=null;screen("cover")});
