@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#f7f3f0">
+<meta name="description" content="测测你属于哪种让人上头的类型。10道日常互动题，找到你独特的吸引力。">
+<title>测测你属于哪种让人上头的类型</title>
+<style>
+:root{--bg:#f7f3f0;--paper:#fffdfa;--ink:#332f33;--muted:#827981;--accent:#987d91;--accent2:#e9dce5;--line:#ece5e9;--soft:#f4edf2}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;padding:20px 14px 34px}
+button{font:inherit;cursor:pointer}button:focus-visible{outline:3px solid #b79ab2;outline-offset:3px}
+.app{max-width:520px;margin:0 auto}.topline{display:flex;justify-content:space-between;align-items:center;color:var(--muted);font-size:12px;letter-spacing:.08em;margin:4px 2px 20px}.panel{background:var(--paper);border:1px solid var(--line);border-radius:24px;padding:24px 20px;box-shadow:0 8px 28px #65515a0a}.eyebrow{font-size:12px;letter-spacing:.12em;color:var(--accent);font-weight:700}.hero{padding:8px 2px 18px}.hero h1{font-size:34px;line-height:1.25;letter-spacing:-.04em;margin:12px 0 14px;font-weight:750}.hero p{color:var(--muted);margin:0;font-size:15px}.deco{height:5px;width:58px;border-radius:9px;background:var(--accent2);margin:20px 0}.note{font-size:12px;color:var(--muted);margin-top:14px}.primary{width:100%;border:0;border-radius:15px;background:var(--accent);color:white;padding:14px 18px;font-weight:650;margin-top:22px}.primary:disabled{opacity:.35;cursor:not-allowed}.secondary{border:1px solid var(--line);background:transparent;border-radius:13px;padding:10px 14px;color:var(--ink)}.progressrow{display:flex;justify-content:space-between;color:var(--muted);font-size:12px;margin-bottom:10px}.progress{height:4px;background:#eee7ec;border-radius:99px;overflow:hidden;margin-bottom:24px}.bar{height:100%;background:var(--accent);width:10%;transition:width .2s}.qtitle{font-size:23px;line-height:1.45;margin:0 0 22px;letter-spacing:-.025em}.options{display:grid;gap:10px}.option{width:100%;display:flex;gap:12px;align-items:flex-start;text-align:left;padding:14px;border:1px solid var(--line);border-radius:15px;background:#fffdfa;color:var(--ink);line-height:1.5;min-height:58px}.option .letter{width:25px;height:25px;flex:0 0 25px;border-radius:50%;background:#f3edf2;color:#897488;display:grid;place-items:center;font-size:12px}.option.selected{border-color:var(--accent);background:var(--soft)}.option.selected .letter{background:var(--accent);color:white}.nav{display:flex;gap:10px;margin-top:20px}.nav .primary{margin:0;flex:1}.nav .secondary{min-width:90px}.result-kicker{font-size:12px;color:var(--accent);letter-spacing:.12em;font-weight:700}.result h1{font-size:34px;line-height:1.25;letter-spacing:-.04em;margin:8px 0}.subtitle{font-size:18px;line-height:1.5;color:#665765;margin:0 0 22px}.result p{margin:0 0 16px}.section{border-top:1px solid var(--line);padding-top:17px;margin-top:19px}.section h2{font-size:15px;margin:0 0 8px}.quote{background:var(--soft);padding:16px;border-radius:16px;font-weight:650;line-height:1.6;margin-top:20px}.tag{display:inline-block;font-size:12px;background:#f3edf2;color:#7b647a;padding:5px 10px;border-radius:99px;margin:2px 5px 8px 0}.result-actions{display:grid;gap:10px;margin-top:22px}.result-actions .primary{margin:0}.tiny{text-align:center;color:var(--muted);font-size:11px;margin-top:14px}.hidden{display:none!important}
+@media(min-width:500px){body{padding-top:34px}.panel{padding:30px 28px}.hero h1,.result h1{font-size:38px}}
+</style>
+</head>
+<body><main class="app">
+<div class="topline"><span>MOOD TESTS</span><span>一个轻松的小测试</span></div>
+<section id="home" class="panel">
+<div class="hero">
+<div class="eyebrow">A LITTLE LOVE & ATTRACTION TEST</div>
+<h1>测测你属于哪种<br>让人上头的类型</h1>
+<p>有些人让人越相处越喜欢，有些人总能留下特别的印象。<br>用 10 道日常互动题，看看你的吸引力更像哪一种。</p>
+<div class="deco"></div>
+<p>没有标准答案，选更接近你平时反应的那个就好。</p>
+</div>
+<button class="primary" id="start">开始测试 →</button>
+<div class="note">约 2 分钟 · 10 道单选题 · 趣味自我探索</div>
+</section>
+<section id="quiz" class="panel hidden">
+<div class="progressrow"><span id="step">QUESTION 01</span><span id="count">1 / 10</span></div>
+<div class="progress"><div id="bar" class="bar"></div></div>
+<h2 id="question" class="qtitle"></h2>
+<div id="options" class="options"></div>
+<div class="nav"><button class="secondary" id="prev">上一题</button><button class="primary" id="next" disabled>下一题 →</button></div>
+<div class="tiny">选最符合你真实反应的答案，不用选“看起来最好”的。</div>
+</section>
+<section id="result" class="panel result hidden">
+<div class="result-kicker">YOUR ATTRACTION TYPE</div>
+<div id="rtype" class="tag"></div>
+<h1 id="rtitle"></h1>
+<p id="rsubtitle" class="subtitle"></p>
+<div id="rbody"></div>
+<div class="quote" id="quote"></div>
+<div class="section"><h2>给你的小提示</h2><p id="tip"></p></div>
+<div class="result-actions"><button class="primary" id="again">再测一次</button><button class="secondary" id="copy">复制我的结果</button></div>
+<div class="tiny">这是基于答题选择生成的趣味画像，不代表别人真实的想法，也不定义你的全部。</div>
+</section>
+</main>
+<script>
+const types={
+A:{name:"慢热耐品型",subtitle:"你不是第一眼的答案，是后来总会想起的人。",p:["你可能不是刚认识时最抢眼的那一个，但相处过后，你的一些想法、说话方式和细节会慢慢显出味道。你不急着把自己一次性展示完，熟悉你需要一点时间，而这段时间也会让人发现更多值得了解的地方。","你最有记忆点的地方，不一定是某个惊天动地的举动，而是你认真聊起喜欢的事、突然说出一句很有个人风格的话，或在普通相处里流露出的真实想法。","你有时可能低估了自己的存在感。不是每个人都会立刻注意到你，但不必为了抢眼而改变自己的节奏。"],moment:"当一次普通聊天结束后，对方发现自己还记得你说过的某句话。",mis:"如果对方习惯快速判断，你的魅力可能需要更多相处时间才会被看见。",quote:"你不需要成为所有人的第一眼心动，也可以是某个人越想越喜欢的那一个。",tip:"给愿意了解你的人一点时间，也允许自己主动露出喜欢的事和真实的想法。"},
+B:{name:"反差感本人",subtitle:"本来以为了解你了，结果发现才刚开始。",p:["你身上可能有一些看起来不太搭的特质：平时随和，遇到原则问题却很坚定；看起来大大咧咧，实际上又能注意到细节。你并不是刻意制造神秘感，只是本来就不止一面。","你很容易打破别人最初形成的印象。熟悉之后，对方可能发现你比想象中认真、比想象中有主见，或者在某些事情上意外地细腻。","这种吸引力来自真实的丰富感，而不是忽冷忽热。你不需要为了让人好奇，故意隐藏自己。"],moment:"当别人已经以为摸清了你的脾气，却发现你在另一件事上完全有自己的想法。",mis:"有些人可能会误以为你前后不一。清楚表达自己的原则，能让反差更有魅力。",quote:"你最有趣的地方，是别人以为故事快讲完了，你却还有下一页。",tip:"不必一次展示所有面向，但也别把真实的自己藏得太深。"},
+C:{name:"开心果型",subtitle:"跟你在一起，好像连普通日子都变得有意思。",p:["你带来的吸引力，很大一部分来自相处体验。你可能很会接话、懂得什么时候开个玩笑，也可能只是对生活里的小事有自己的幽默感。","和你相处时，互动不必一直靠某一个人努力维持。一次随口的分享、一件小事里的笑点，都可能变成只有你们懂的共同记忆。人们期待的往往不只是某个话题，而是和你待在一起的感觉。","但你不必永远负责活跃气氛。你也可以安静、疲惫，或者有不想开玩笑的时候。"],moment:"原本只是随便聊聊，最后却发现和你说了很久，还顺手存下了新的共同梗。",mis:"别人可能习惯了你带来的轻松，忘了你也需要被照顾和认真倾听。",quote:"你不一定让人一见钟情，但很容易让人开始期待下一次见面。",tip:"别把自己变成气氛组。能接受你安静一面的关系，才值得长期投入。"},
+D:{name:"暧昧感选手",subtitle:"有些心动，不一定要把话说得太明白。",p:["你可能比较在意互动里的感觉。一个恰到好处的玩笑、一次自然的对视、接住对方抛来的话，都可能让普通交流多出一点意味。","你不一定擅长直接表达好感，但可能很会感受两个人之间的节奏。你在意的不只是说了什么，还有语气、停顿，以及对方有没有回应你的那一点小试探。","暧昧的魅力在于双方都觉得有趣，而不是让人一直猜。真正舒服的互动，既有心动，也有基本的坦诚。"],moment:"一次普通聊天突然变得有点特别，而你们都没有急着把气氛解释清楚。",mis:"如果太依赖猜测，别人可能会读不懂你的信号。想靠近时，适度明确也很迷人。",quote:"你擅长的不是让人猜不透，而是让一次互动多出一点心动的余韵。",tip:"享受来回的感觉，也记得给彼此清晰的回应，不必把暧昧变成猜谜。"},
+E:{name:"细节偏爱型",subtitle:"你会让人觉得，自己不是被随便对待的那一个。",p:["你容易留意别人说过的小事，也会在回应时把这些细节放进去。你未必总说漂亮的话，但会用记得、留心和认真回应，让相处显得具体而特别。","这种吸引力不是对所有人都热情，而是当你真正在意一个人时，对方能感受到你有在听、有在观察，也愿意花一点心思。被认真对待的体验，往往比空泛的甜言蜜语更容易留在记忆里。","也别忘了，体贴不代表要承担所有人的情绪。你可以关心别人，也可以保留自己的边界。"],moment:"对方随口提过的一件小事，你后来真的记住了，甚至在合适的时候自然地回应了它。",mis:"你可能习惯先照顾别人的感受，却不太主动表达自己希望得到什么。",quote:"真正让人记住的偏爱，不是做了多少，而是你真的把对方放进了心里。",tip:"继续保留你的细腻，也练习直接说出自己的需求，让关系不只靠你一个人用心。"},
+F:{name:"不太好追型",subtitle:"你有自己的节奏，不会为了被喜欢就改变方向。",p:["你不太容易因为别人给了关注，就立刻把对方放到生活中心。你有自己的安排、偏好和判断，也会观察彼此是不是真的合适。","这种独立感会让你的选择显得有分量。你不是故意冷淡，也不是把关系当成输赢；只是对你来说，喜欢一个人不等于放弃自己的生活。","真正适合你的关系，不需要靠反复试探来证明价值。你可以保持边界，也可以在确定心意时主动表达。"],moment:"当你愿意腾出时间、主动靠近或明确表达好感时，对方能感觉到这不是随手给出的关注。",mis:"别人可能把你的慢回应理解成没兴趣。清晰表达，比刻意保持距离更有效。",quote:"你不需要让所有人追着你跑；你只需要认真选择自己想靠近的人。",tip:"保留独立，也给喜欢的人明确的信号。边界感和冷处理不是一回事。"},
+G:{name:"氛围感选手",subtitle:"你不一定做了什么，但整体就是很有记忆点。",p:["你的吸引力可能来自很多细小部分的组合：表达方式、审美偏好、穿搭、观察事物的角度，或者你对喜欢的东西有自己的理解。单独看每一点都不夸张，放在一起却形成了鲜明的个人印象。","你不一定需要成为全场中心。你可能只是很自然地做自己，却让人记住你喜欢什么、怎么看待一件事，以及和你相处时的整体感受。","氛围感不是某一种固定外貌，也不需要复制流行模板。越清楚自己喜欢什么，你的辨识度越容易自然形成。"],moment:"你分享了一首歌、一个地方或一个观点，对方后来发现这件事和你本人一样让人印象深刻。",mis:"如果太在意呈现出来的样子，反而容易把自己变成一张精心维护的名片。",quote:"你的魅力不只是好看或特别，而是很多细节放在一起，刚好很像你。",tip:"继续发展真正喜欢的东西。风格可以被看见，但不必时时刻刻都在表演。"},
+H:{name:"松弛自然型",subtitle:"你不费劲证明自己，反而让人更容易靠近。",p:["你可能不太喜欢把每次互动都当成一次表现，也不会时时刻刻揣摩自己是不是说错了什么。你有自然的一面，愿意表达真实反应，也能允许相处中出现一点空白。","这种松弛感会让人更容易放下戒备。和你相处不需要一直猜标准答案，也不必把每个小细节都放大。你带来的舒服感，来自你没有把自己和别人逼得太紧。","松弛不是毫不在意，也不是不经营关系。你可以自然，也可以认真；可以随性，也可以在重要的事情上表达立场。"],moment:"计划临时变了、话题突然断了，你也能自在应对，不急着把每个空隙都填满。",mis:"别人可能把你的随和误会成不在意。重要的感受和期待，还是值得说清楚。",quote:"你最吸引人的地方，是和你相处时，不必一直努力成为一个更讨喜的人。",tip:"保持自然，也别忘了让在意你的人知道：你同样认真对待这段关系。"}
+};
+const qs=[
+{q:"如果一次见面结束后，对方还会想起你，你觉得更可能是因为？",o:[["你随口说的一句话，后来越想越有意思","A"],["你某个和平时印象不太一样的瞬间","B"],["你们相处时真的很好笑、很开心","C"],["某次对视或接话，气氛突然有点微妙","D"]]},
+{q:"刚认识一个人时，你通常更容易先做什么？",o:[["认真听对方说话，顺手记住一些细节","E"],["先观察合不合拍，不急着拉近距离","F"],["用自己的穿搭、表达或审美留下印象","G"],["自然地聊起来，不太预设要表现成什么样","H"]]},
+{q:"当你对一个人有好感时，你更可能？",o:[["不急着表态，让关系慢慢发酵","A"],["偶尔露出和平时不一样的一面","B"],["主动分享有趣的事，找机会一起玩","C"],["试探对方的反应，享受一点来回拉扯","D"]]},
+{q:"朋友说你很有吸引力，你最希望是因为什么？",o:[["你会让人觉得自己被认真放在心上","E"],["你有自己的生活，不会围着别人转","F"],["你很有个人风格，辨识度很高","G"],["你让人很放松，不用小心翼翼地相处","H"]]},
+{q:"和喜欢的人相处，你更自然的状态是？",o:[["不急着推进，但会让相处留有余味","A"],["熟起来之后，反而会展现出更多意外的一面","B"],["想办法让两个人都玩得开心","C"],["不把话说满，喜欢互动里一点点试探","D"]]},
+{q:"当对方心情不好时，你第一反应更接近？",o:[["用一点出其不意的方式打破沉闷","B"],["先听清楚对方真正介意的是什么","E"],["留意彼此的反应和气氛，不急着给建议","F"],["用恰到好处的表达或小细节传递心意","G"]]},
+{q:"如果你要让一个普通的下午变得难忘，你会？",o:[["让这次相处留下一个值得回想的小细节","A"],["挑一个有感觉的地方，把整体体验安排得特别","G"],["临时提议一件没想到的事，让人看到你的另一面","B"],["随便走走聊聊，不刻意安排也能很自在","H"]]},
+{q:"在一段关系里，你最不想失去什么？",o:[["彼此分享快乐、随时能玩到一起的感觉","C"],["那种不用解释太多也能被理解的感觉","E"],["互动里持续存在的心动和微妙感","D"],["各自独立，同时又愿意选择彼此的空间","F"]]},
+{q:"如果有人对你越来越感兴趣，你觉得最可能的原因是？",o:[["相处结束后，他发现自己还在回味你","A"],["他发现你和最初认识时不太一样","B"],["每次和你见面都能收获快乐","C"],["你们之间有一种说不清的互动张力","D"]]},
+{q:"你希望喜欢的人在你身上发现什么？",o:[["你会认真回应他，也记得他在意的事","E"],["你有自己的原则，不会轻易失去自己","F"],["你有独特的审美和属于自己的气质","G"],["你不需要刻意表现，也能让人喜欢真实的你","H"]]}
+];
+let idx=0, answers=Array(qs.length).fill(null);
+const $=id=>document.getElementById(id);
+function show(id){["home","quiz","result"].forEach(x=>$(x).classList.toggle("hidden",x!==id))}
+function renderQ(){const q=qs[idx];$("step").textContent="QUESTION "+String(idx+1).padStart(2,"0");$("count").textContent=(idx+1)+" / "+qs.length;$("bar").style.width=((idx+1)/qs.length*100)+"%";$("question").textContent=q.q;$("options").innerHTML="";q.o.forEach((o,i)=>{const b=document.createElement("button");b.className="option"+(answers[idx]===i?" selected":"");b.innerHTML='<span class="letter">'+String.fromCharCode(65+i)+'</span><span></span>';b.querySelector("span:last-child").textContent=o[0];b.onclick=()=>{answers[idx]=i;renderQ()};$("options").appendChild(b)});$("prev").style.visibility=idx===0?"hidden":"visible";$("next").textContent=idx===qs.length-1?"查看结果 →":"下一题 →";$("next").disabled=answers[idx]===null}
+function finish(){const scores={A:0,B:0,C:0,D:0,E:0,F:0,G:0,H:0};answers.forEach((a,i)=>scores[qs[i].o[a][1]]++);const max=Math.max(...Object.values(scores));let winners=Object.keys(scores).filter(k=>scores[k]===max);let winner=winners[0];if(winners.length>1){const last=answers[9]===null?null:qs[9].o[answers[9]][1];if(last&&winners.includes(last))winner=last;else{const ninth=qs[8].o[answers[8]][1];if(winners.includes(ninth))winner=ninth}}const t=types[winner];$("rtype").textContent="你的结果";$("rtitle").textContent=t.name;$("rsubtitle").textContent=t.subtitle;$("rbody").innerHTML='<p>'+t.p[0]+'</p><p>'+t.p[1]+'</p><div class="section"><h2>你最容易让人记住的瞬间</h2><p>'+t.moment+'</p></div><div class="section"><h2>你可能没注意到的另一面</h2><p>'+t.p[2]+'</p><p>'+t.mis+'</p></div>';$("quote").textContent=t.quote;$("tip").textContent=t.tip;show("result")}
+$("start").onclick=()=>{idx=0;answers=Array(qs.length).fill(null);show("quiz");renderQ()};$("prev").onclick=()=>{if(idx>0){idx--;renderQ()}};$("next").onclick=()=>{if(answers[idx]===null)return;if(idx<qs.length-1){idx++;renderQ()}else finish()};$("again").onclick=()=>{idx=0;answers=Array(qs.length).fill(null);show("home")};$("copy").onclick=async()=>{const t=types[Object.keys(types).find(k=>$("rtitle").textContent===types[k].name)];const txt="测测你属于哪种让人上头的类型\n我的结果："+t.name+"\n"+t.subtitle+"\n"+t.quote;try{await navigator.clipboard.writeText(txt);$("copy").textContent="已复制结果 ✓"}catch(e){const ta=document.createElement("textarea");ta.value=txt;document.body.appendChild(ta);ta.select();document.execCommand("copy");ta.remove();$("copy").textContent="已复制结果 ✓"}};
+</script></body></html>
