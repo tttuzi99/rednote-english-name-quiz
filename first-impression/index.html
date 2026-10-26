@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#f7f5f1">
+<meta name="description" content="从日常社交场景出发，看看你最容易给人留下怎样的第一印象。">
+<title>你给人的第一印象，和你想的一样吗？</title>
+<style>
+:root{--bg:#f7f5f1;--card:#fffefa;--ink:#343532;--muted:#777970;--line:#e8e4dc;--accent:#718779;--accent2:#e8eee8;--warm:#b58a76}
+*{box-sizing:border-box}html{min-height:100%;background:var(--bg)}body{margin:0;color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;background:var(--bg);min-height:100vh;min-height:100dvh}
+button{font:inherit;-webkit-tap-highlight-color:transparent}button:focus-visible{outline:3px solid #a5b9aa;outline-offset:2px}
+.wrap{width:min(100%,560px);margin:0 auto;padding:20px 18px calc(28px + env(safe-area-inset-bottom));min-height:100vh;min-height:100dvh;display:flex;flex-direction:column}
+.top{display:flex;align-items:center;justify-content:space-between;color:var(--muted);font-size:12px;letter-spacing:.08em;padding:5px 1px 22px}.mark{display:flex;align-items:center;gap:7px}.dot{width:7px;height:7px;background:var(--accent);border-radius:50%}
+main{flex:1;display:flex;flex-direction:column;justify-content:center}
+.eyebrow{font-size:12px;letter-spacing:.12em;color:var(--accent);font-weight:650;margin-bottom:12px}
+h1{font-size:clamp(27px,7vw,37px);line-height:1.35;letter-spacing:-.04em;margin:0 0 14px;font-weight:750}
+.lead{font-size:15px;line-height:1.8;color:#686b64;margin:0 0 25px}
+.hero{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:25px 22px;box-shadow:0 8px 28px #423b2c08}
+.pillrow{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 22px}.pill{border:1px solid var(--line);border-radius:99px;padding:7px 11px;color:#686b64;font-size:12px;background:#fff}
+.primary{width:100%;border:0;border-radius:14px;background:var(--accent);color:white;padding:16px 18px;font-weight:650;font-size:15px;cursor:pointer;min-height:52px}
+.secondary{border:1px solid var(--line);border-radius:12px;background:transparent;color:var(--ink);padding:13px 16px;cursor:pointer}
+.fine{font-size:11px;line-height:1.7;color:#999a92;text-align:center;margin:13px 0 0}
+.progressline{height:4px;border-radius:99px;background:#e8e6df;overflow:hidden;margin-bottom:22px}.progressfill{height:100%;background:var(--accent);width:0;transition:width .18s ease}
+.qmeta{display:flex;justify-content:space-between;align-items:center;font-size:12px;color:var(--muted);margin-bottom:14px}
+.question{font-size:23px;line-height:1.5;letter-spacing:-.025em;margin:0 0 8px;font-weight:720}.hint{font-size:13px;line-height:1.7;color:var(--muted);margin:0 0 20px}
+.options{display:flex;flex-direction:column;gap:10px}.option{display:flex;align-items:center;gap:12px;width:100%;text-align:left;padding:15px 14px;border:1px solid var(--line);border-radius:14px;background:var(--card);color:var(--ink);min-height:57px;cursor:pointer;line-height:1.55;font-size:14px}
+.option .letter{width:27px;height:27px;flex:0 0 27px;display:grid;place-items:center;border-radius:9px;background:#f1f0eb;color:#76786f;font-size:12px;font-weight:650}
+.option[aria-pressed="true"]{border-color:var(--accent);background:var(--accent2)}.option[aria-pressed="true"] .letter{background:var(--accent);color:white}
+.nav{display:flex;gap:10px;margin-top:20px}.nav .primary{flex:1}.nav .secondary{min-width:92px}
+.resultlabel{font-size:12px;color:var(--muted);letter-spacing:.1em;margin-bottom:12px}.resulttitle{font-size:30px;line-height:1.35;margin:0 0 14px;letter-spacing:-.035em}.resultdesc{font-size:15px;line-height:1.85;color:#666960;margin:0 0 20px}
+.resultcard{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:24px 21px}.subhead{font-size:13px;font-weight:700;margin:20px 0 8px}.resulttext{font-size:14px;line-height:1.85;color:#64675f;margin:0}.quote{background:#f1f3ee;border-radius:14px;padding:15px 16px;font-size:14px;line-height:1.8;margin-top:18px;color:#48594d}
+.actions{display:flex;flex-direction:column;gap:10px;margin-top:16px}.hidden{display:none!important}
+.footer{font-size:11px;color:#a09f97;text-align:center;padding-top:22px}
+@media(min-width:500px){.wrap{padding-top:28px;padding-bottom:30px}.hero{padding:31px 30px}.resultcard{padding:29px}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="top"><div class="mark"><span class="dot"></span><span>小小观察室</span></div><span>SELF DISCOVERY</span></header>
+<main>
+<section id="home" class="hero">
+<div class="eyebrow">从日常互动里，观察那些细节</div>
+<h1>你给人的第一印象，<br>和你想的一样吗？</h1>
+<p class="lead">有时候，你觉得自己只是安静一点，别人却可能觉得你很有距离感；你以为自己在照顾气氛，对方记住的也许是你的可靠。试着从几个真实场景里，看看你最容易传递什么信号。</p>
+<div class="pillrow"><span class="pill">约 3 分钟</span><span class="pill">12 道情境题</span><span class="pill">没有标准答案</span></div>
+<button class="primary" id="startBtn" type="button">开始看看 <span aria-hidden="true">→</span></button>
+<p class="fine">结果是基于选择的倾向性解读，不代表他人对你的真实评价。</p>
+</section>
+<section id="quiz" class="hidden" aria-live="polite">
+<div class="qmeta"><span id="qcount">第 1 / 12 题</span><span id="qpercent">8%</span></div>
+<div class="progressline"><div id="progress" class="progressfill"></div></div>
+<h2 id="qtitle" class="question"></h2><p id="qhint" class="hint">选最接近你自然反应的一项，不用选“看起来更好”的答案。</p>
+<div id="options" class="options"></div>
+<div class="nav"><button class="secondary" id="backBtn" type="button">上一题</button><button class="primary" id="nextBtn" type="button" disabled>下一题 →</button></div>
+</section>
+<section id="result" class="hidden" aria-live="polite">
+<div class="resultlabel">YOUR FIRST IMPRESSION</div>
+<div class="resultcard">
+<div class="eyebrow">你的第一印象倾向</div><h2 id="rtitle" class="resulttitle"></h2><p id="rdesc" class="resultdesc"></p>
+<div class="subhead">别人可能先注意到</div><p id="rnotice" class="resulttext"></p>
+<div class="subhead">容易产生的小误会</div><p id="rmisread" class="resulttext"></p>
+<div class="subhead">让真实的你更容易被看见</div><p id="rtip" class="resulttext"></p>
+<div id="rquote" class="quote"></div>
+</div>
+<div class="actions"><button class="primary" id="retryBtn" type="button">重新测一次</button><button class="secondary" id="shareBtn" type="button">复制结果文案</button></div>
+<p class="fine" id="shareStatus" role="status"></p>
+</section>
+</main>
+<footer class="footer">把答案留给真实的自己，不必迎合任何一种类型。</footer>
+</div>
+<script>
+(function(){
+"use strict";
+const questions=[
+{t:"第一次加入一个已经聊起来的小圈子，你更可能？",o:[
+["先听一会儿，找到合适的时机再加入","calm"],
+["先和旁边的人打个招呼，慢慢融进去","warm"],
+["顺着正在聊的话题接一句，打开局面","bright"],
+["先弄清楚大家在聊什么，再决定怎么参与","steady"]]},
+{t:"别人第一次向你求助，但你们还不熟，你通常会？",o:[
+["先问清楚具体情况，再给出办法","calm"],
+["先回应对方的情绪，让对方放松一点","warm"],
+["直接一起想办法，边做边聊","bright"],
+["看自己能帮到哪里，说明能做到的范围","steady"]]},
+{t:"合照时，你一般会自然地？",o:[
+["站在舒服的位置，不太主动抢镜","calm"],
+["照顾一下旁边的人，让大家都自在","warm"],
+["主动找角度或做点动作，让画面活起来","bright"],
+["配合安排，拍完就好，不太纠结","steady"]]},
+{t:"讨论时有人提出一个你不太认同的观点，你会？",o:[
+["先听完整，再指出逻辑上不同的地方","calm"],
+["先确认彼此理解一致，再说自己的看法","warm"],
+["直接表达不同意见，现场聊清楚","bright"],
+["说出自己的判断，但不一定要争出输赢","steady"]]},
+{t:"别人夸你时，你更自然的反应是？",o:[
+["简单说声谢谢，不太延伸这个话题","calm"],
+["笑着回应，也顺手夸回对方","warm"],
+["接住这个梗，轻松地聊下去","bright"],
+["有点不好意思，但会认真记在心里","steady"]]},
+{t:"临时和新认识的人一起做件事，你更常做什么？",o:[
+["先理清步骤和重点，避免大家忙乱","calm"],
+["确认每个人是否跟得上、有没有顾虑","warm"],
+["先动起来，过程中再协调细节","bright"],
+["把自己的部分做好，需要时再配合","steady"]]},
+{t:"你刚到一个新环境，别人还不认识你，你通常？",o:[
+["先观察规则和节奏，熟悉后再表现","calm"],
+["主动记住几个人的名字，建立连接","warm"],
+["尽快参与活动，让大家知道你在场","bright"],
+["保持自然，不刻意融入，也不刻意疏远","steady"]]},
+{t:"聊天时突然出现几秒钟的冷场，你更可能？",o:[
+["不急着填满空白，等新话题自然出现","calm"],
+["问个轻松的问题，让对话继续","warm"],
+["抛出一个新话题或小玩笑","bright"],
+["顺着现场发生的事接话，不强行找话题","steady"]]},
+{t:"你需要拒绝一个不太熟的人提出的请求，你会？",o:[
+["解释原因，尽量把事情说清楚","calm"],
+["先表达理解，再温和地拒绝","warm"],
+["直接说不方便，避免绕太多弯","bright"],
+["清楚说明边界，不额外解释太多","steady"]]},
+{t:"别人讲了一件你不熟悉的事，你更可能？",o:[
+["听细节，想弄明白事情的来龙去脉","calm"],
+["关注对方为什么在意这件事","warm"],
+["边听边提问，把话题聊得更有来回","bright"],
+["认真听，但不会为了接话而假装懂","steady"]]},
+{t:"临时被请来介绍自己，你最容易先说？",o:[
+["最近在做什么、关注什么事情","calm"],
+["自己和什么样的人相处得来","warm"],
+["最近发生的有趣经历或爱好","bright"],
+["简单介绍重点，等有共同话题再展开","steady"]]},
+{t:"一次见面结束后，你希望对方最先记住你？",o:[
+["思路清楚、做事靠谱","calm"],
+["相处舒服、愿意理解别人","warm"],
+["有趣鲜活、很有参与感","bright"],
+["有分寸、真实、不刻意讨好","steady"]]}
+];
+const results={
+calm:{title:"冷静有分寸的人",desc:"你给人的第一层信号往往是清醒、稳当，不急着证明自己。你可能不会在刚认识时把所有情绪和想法都摆出来，但会让人感觉你有自己的判断。",notice:"你会先观察、听完整，再决定怎么回应。别人可能注意到你的条理、克制和不轻易附和。",misread:"不熟悉你的人有时会把你的慢热理解成冷淡，或以为你不太想参与。",tip:"不用强迫自己变得外向。适当多给一个回应、一个追问，别人会更容易知道你不是不在意，只是在认真判断。",quote:"我不是没反应，只是习惯先看清楚再开口。"},
+warm:{title:"让人容易放松的人",desc:"你容易传递出友善、体贴和愿意接住别人情绪的信号。你不一定是场上最显眼的人，但常常能让第一次见面少一点尴尬。",notice:"你会留意对方是否自在，也愿意给出回应。别人可能很快感到被尊重、被认真对待。",misread:"有时别人会把你的礼貌当成亲近，或默认你总愿意迁就。",tip:"友善不等于随时答应。清楚表达自己的偏好和边界，反而能让关系更自然。",quote:"我愿意让你舒服，但也会把自己的感受放在里面。"},
+bright:{title:"有存在感的表达者",desc:"你比较容易通过反应、表达和参与感被人注意到。你不一定刻意成为焦点，但会让互动更有来回，别人更容易记住你当时的状态。",notice:"你愿意接话、表达观点，也不太怕让现场产生一点变化。",misread:"节奏比较慢或还不熟悉你的人，可能觉得你很强势、很外放，忽略你也有安静的一面。",tip:"在表达之后留一点空间给别人接话，你的存在感会更像感染力，而不是压迫感。",quote:"我不是一定要成为焦点，只是不想让交流停在表面。"},
+steady:{title:"自然可靠的同行者",desc:"你传递的信号通常是自然、稳定、有边界。你不太需要靠夸张的表现建立存在感，更愿意在具体事情里展现自己。",notice:"你会看情况行动，答应的事尽量做到，也不为了合群而勉强自己。",misread:"刚认识时，别人可能觉得你比较低调、难以读懂，没发现你其实很有自己的想法。",tip:"适当说出你正在想什么、喜欢什么，能减少别人对你的猜测，也不必改变你舒服的节奏。",quote:"我不需要很热闹，也能让人感到踏实。"}
+};
+let index=0,answers=Array(questions.length).fill(null);
+const $=id=>document.getElementById(id);
+const home=$("home"),quiz=$("quiz"),result=$("result");
+function show(section){home.classList.add("hidden");quiz.classList.add("hidden");result.classList.add("hidden");section.classList.remove("hidden");}
+function renderQuestion(){
+ const q=questions[index];$("qcount").textContent="第 "+(index+1)+" / "+questions.length+" 题";
+ const pct=Math.round((index+1)/questions.length*100);$("qpercent").textContent=pct+"%";$("progress").style.width=pct+"%";
+ $("qtitle").textContent=q.t;const box=$("options");box.replaceChildren();
+ q.o.forEach((item,i)=>{const b=document.createElement("button");b.type="button";b.className="option";b.setAttribute("aria-pressed",answers[index]===i?"true":"false");
+ const letter=document.createElement("span");letter.className="letter";letter.textContent=String.fromCharCode(65+i);
+ const txt=document.createElement("span");txt.textContent=item[0];b.append(letter,txt);
+ b.addEventListener("click",()=>{answers[index]=i;Array.from(box.children).forEach((el,j)=>el.setAttribute("aria-pressed",j===i?"true":"false"));$("nextBtn").disabled=false;});box.append(b);});
+ $("backBtn").disabled=index===0;$("backBtn").style.opacity=index===0?".45":"1";
+ $("nextBtn").textContent=index===questions.length-1?"查看结果 →":"下一题 →";
+ $("nextBtn").disabled=answers[index]===null;
+}
+function calcResult(){
+ const scores={calm:0,warm:0,bright:0,steady:0};
+ answers.forEach((a,i)=>{if(a!==null)scores[questions[i].o[a][1]]++;});
+ const order=Object.keys(scores).sort((a,b)=>scores[b]-scores[a]);
+ return results[order[0]];
+}
+function showResult(){
+ const r=calcResult();$("rtitle").textContent=r.title;$("rdesc").textContent=r.desc;$("rnotice").textContent=r.notice;$("rmisread").textContent=r.misread;$("rtip").textContent=r.tip;$("rquote").textContent="“"+r.quote+"”";$("shareStatus").textContent="";show(result);window.scrollTo(0,0);
+}
+$("startBtn").addEventListener("click",()=>{index=0;answers=Array(questions.length).fill(null);show(quiz);renderQuestion();window.scrollTo(0,0);});
+$("backBtn").addEventListener("click",()=>{if(index>0){index--;show(quiz);renderQuestion();}});
+$("nextBtn").addEventListener("click",()=>{if(answers[index]===null)return;if(index<questions.length-1){index++;show(quiz);renderQuestion();}else showResult();});
+$("retryBtn").addEventListener("click",()=>{index=0;answers=Array(questions.length).fill(null);show(quiz);renderQuestion();window.scrollTo(0,0);});
+$("shareBtn").addEventListener("click",async()=>{const text="我的第一印象倾向是「"+$("rtitle").textContent+"」\n"+$("rdesc").textContent+"\n你给人的第一印象，和你想的一样吗？";try{if(navigator.clipboard&&window.isSecureContext){await navigator.clipboard.writeText(text);}else{const ta=document.createElement("textarea");ta.value=text;ta.style.position="fixed";ta.style.opacity="0";document.body.appendChild(ta);ta.select();const ok=document.execCommand("copy");ta.remove();if(!ok)throw new Error("copy failed");}$("shareStatus").textContent="结果文案已复制，可以去分享啦。";}catch(e){$("shareStatus").textContent="复制未成功，请长按选择结果文字。";}});
+})();
+</script>
+</body>
+</html>
